@@ -147,13 +147,7 @@ Erwähne die Tageszeit passend."""
     )
     return jsonify({"briefing": response.data.briefing if False else response.content[0].text})
 
-if __name__ == "__main__":
-    app.run(debug=False, host="0.0.0.0", port=int(os.environ.get("PORT", 5001)))
 
-# Serve React frontend
-@app.route('/', defaults={'path': ''})
-@app.route('/<path:path>')
-def serve_frontend(path):
-    if path and os.path.exists(os.path.join('frontend', 'dist', path)):
-        return send_file(os.path.join('frontend', 'dist', path))
-    return send_file(os.path.join('frontend', 'dist', 'index.html'))
+if __name__ == '__main__':
+    port = int(os.environ.get('PORT', 5001))
+    app.run(debug=False, host='0.0.0.0', port=port)
