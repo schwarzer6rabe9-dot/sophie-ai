@@ -1,0 +1,15 @@
+{
+  "user": "Antonio",
+  "created": "2026-06-05",
+  "facts": [
+    "Antonio wohnt in Riffenmatt, Schweiz",
+    "Antonio baut Sophie AI als persönliche Assistentin",
+    "Sophie hat die Stimme von Lea (ElevenLabs)"
+  ],
+  "conversations": [
+    {
+      "date": "05.06.2026 20:39",
+      "summary": "Antonio: Hallo Sophie wie geht es dir... Sophie: Guten Abend Antonio! 😊\n\nMir geht es wunderbar, danke der Nac..."
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pip3 show *)",
+      "Bash(python3 server.py)",
+      "Bash(curl -s http://127.0.0.1:5000/chat -X POST -H \"Content-Type: application/json\" -d '{\"messages\":[{\"role\":\"user\",\"content\":\"Hallo!\"}]}')",
+      "Bash(curl *)",
+      "Bash(xargs kill -9)",
+      "Bash(python3 *)"
+    ]
+  }
+}
