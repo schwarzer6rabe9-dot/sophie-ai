@@ -149,3 +149,11 @@ Erwähne die Tageszeit passend."""
 
 if __name__ == "__main__":
     app.run(debug=False, host="0.0.0.0", port=int(os.environ.get("PORT", 5001)))
+
+# Serve React frontend
+@app.route('/', defaults={'path': ''})
+@app.route('/<path:path>')
+def serve_frontend(path):
+    if path and os.path.exists(os.path.join('frontend', 'dist', path)):
+        return send_file(os.path.join('frontend', 'dist', path))
+    return send_file(os.path.join('frontend', 'dist', 'index.html'))
