@@ -16,16 +16,36 @@ anthropic_client = anthropic.Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY"))
 ELEVENLABS_API_KEY = os.getenv("ELEVENLABS_API_KEY")
 ELEVENLABS_VOICE_ID = "7eVMgwCnXydb3CikjV7a"
 MEMORY_FILE = os.path.join(os.path.dirname(__file__), "memory.json")
+JSONBIN_KEY = os.getenv("JSONBIN_KEY", "")
+JSONBIN_BIN = os.getenv("JSONBIN_BIN", "")
 
 def load_memory():
+    if JSONBIN_KEY and JSONBIN_BIN:
+        try:
+            r = requests.get(
+                f"https://api.jsonbin.io/v3/b/{JSONBIN_BIN}",
+                headers={"X-Master-Key": JSONBIN_KEY}
+            )
+            return r.json().get("record", {})
+        except:
+            pass
     if os.path.exists(MEMORY_FILE):
         with open(MEMORY_FILE, 'r') as f:
             return json.load(f)
     return {"facts": [], "recent": []}
 
 def save_memory(memory):
+    if JSONBIN_KEY and JSONBIN_BIN:
+        try:
+            requests.put(
+                f"https://api.jsonbin.io/v3/b/{JSONBIN_BIN}",
+                json=memory,
+                headers={"X-Master-Key": JSONBIN_KEY, "Content-Type": "application/json"}
+            )
+        except:
+            pass
     with open(MEMORY_FILE, 'w') as f:
-        json.dump(memory, f)
+        json.dump(memory, f, indent=2)
 
 @app.route('/')
 def serve_index():
@@ -33,9 +53,7 @@ def serve_index():
 
 @app.route('/<path:path>')
 def serve_static(path):
-    if os.path.exists(os.path.join('frontend/dist', path)):
-        return send_from_directory('frontend/dist', path)
-    return send_from_directory('frontend/dist', 'index.html')
+    return send_from_directory('frontend/dist', path)
 
 @app.route('/chat', methods=['POST'])
 def chat():
@@ -47,7 +65,7 @@ def chat():
     system_prompt = f"""Du bist Sophie, eine freundliche, intelligente KI-Assistentin.
 Du sprichst Deutsch und bist warm, empathisch und hilfsbereit.
 Aktuelle Zeit: {datetime.now().strftime('%H:%M Uhr, %d.%m.%Y')}
-Was du weisst: {', '.join(facts) if facts else 'Noch nichts gespeichert.'}
+Was du weisst: {'; '.join(facts) if facts else 'Noch nichts gespeichert.'}
 Letzte Gespräche: {'; '.join(recent) if recent else 'Keine.'}"""
     response = anthropic_client.messages.create(
         model="claude-sonnet-4-20250514",
@@ -76,16 +94,26 @@ def tts():
         return send_file(audio_path, mimetype='audio/mpeg')
     return jsonify({"error": "TTS failed"}), 500
 
-if __name__ == '__main__':
-    port = int(os.environ.get('PORT', 5001))
-    app.run(debug=False, host='0.0.0.0', port=port)
+@app.route('/memory/add', methods=['POST'])
+def memory_add():
+    data = request.json
+    fact = data.get('fact', '')
+    memory = load_memory()
+    if 'facts' not in memory:
+        memory['facts'] = []
+    memory['facts'].append(fact)
+    save_memory(memory)
+    return jsonify({"ok": True})
 
 @app.route("/health")
 def health():
     return "OK", 200
 
-
 @app.route('/briefing', methods=['GET'])
 def briefing():
     memory = load_memory()
     return jsonify({"briefing": f"System online. Hallo Antonio, ich bin Sophie. Bereit für deine Befehle."})
+
+if __name__ == '__main__':
+    port = int(os.environ.get('PORT', 5001))
+    app.run(debug=False, host='0.0.0.0', port=port)
