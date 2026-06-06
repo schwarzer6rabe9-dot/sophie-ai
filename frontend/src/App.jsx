@@ -80,8 +80,7 @@ function App() {
     setLoading(true)
     try {
       const response = await axios.post("https://sophie-ai-jfna.onrender.com/chat", {
-        messages: newMessages.map(m => ({ role: m.role === "assistant" ? "assistant" : "user", content: m.text })),
-        save: true
+        message: msg
       })
       const reply = response.data.reply
       setMessages([...newMessages, { role: "assistant", text: reply }])
