@@ -117,3 +117,78 @@ def briefing():
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5001))
     app.run(debug=False, host='0.0.0.0', port=port)
+
+from google.oauth2.credentials import Credentials
+from google_auth_oauthlib.flow import Flow
+from googleapiclient.discovery import build
+
+GOOGLE_CLIENT_ID = os.getenv("GOOGLE_CLIENT_ID")
+GOOGLE_CLIENT_SECRET = os.getenv("GOOGLE_CLIENT_SECRET")
+SCOPES = [
+    "https://www.googleapis.com/auth/gmail.readonly",
+    "https://www.googleapis.com/auth/calendar.readonly"
+]
+
+@app.route('/auth/google')
+def auth_google():
+    flow = Flow.from_client_config(
+        {"web": {
+            "client_id": GOOGLE_CLIENT_ID,
+            "client_secret": GOOGLE_CLIENT_SECRET,
+            "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+            "token_uri": "https://oauth2.googleapis.com/token",
+            "redirect_uris": ["https://sophie-ai-jfna.onrender.com/oauth/callback"]
+        }},
+        scopes=SCOPES,
+        redirect_uri="https://sophie-ai-jfna.onrender.com/oauth/callback"
+    )
+    auth_url, _ = flow.authorization_url(prompt='consent')
+    return jsonify({"auth_url": auth_url})
+
+@app.route('/oauth/callback')
+def oauth_callback():
+    flow = Flow.from_client_config(
+        {"web": {
+            "client_id": GOOGLE_CLIENT_ID,
+            "client_secret": GOOGLE_CLIENT_SECRET,
+            "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+            "token_uri": "https://oauth2.googleapis.com/token",
+            "redirect_uris": ["https://sophie-ai-jfna.onrender.com/oauth/callback"]
+        }},
+        scopes=SCOPES,
+        redirect_uri="https://sophie-ai-jfna.onrender.com/oauth/callback"
+    )
+    flow.fetch_token(authorization_response=request.url)
+    creds = flow.credentials
+    memory = load_memory()
+    memory['google_token'] = {
+        "token": creds.token,
+        "refresh_token": creds.refresh_token,
+        "client_id": GOOGLE_CLIENT_ID,
+        "client_secret": GOOGLE_CLIENT_SECRET
+    }
+    save_memory(memory)
+    return "<h1>✅ Google verbunden! Sophie kann jetzt Gmail und Kalender lesen. Schliesse dieses Fenster.</h1>"
+
+@app.route('/gmail/unread')
+def gmail_unread():
+    memory = load_memory()
+    token_data = memory.get('google_token')
+    if not token_data:
+        return jsonify({"error": "Nicht verbunden"}), 401
+    creds = Credentials(
+        token=token_data['token'],
+        refresh_token=token_data['refresh_token'],
+        client_id=token_data['client_id'],
+        client_secret=token_data['client_secret'],
+        token_uri="https://oauth2.googleapis.com/token"
+    )
+    service = build('gmail', 'v1', credentials=creds)
+    results = service.users().messages().list(userId='me', labelIds=['UNREAD'], maxResults=5).execute()
+    messages = results.get('messages', [])
+    emails = []
+    for msg in messages:
+        m = service.users().messages().get(userId='me', id=msg['id'], format='metadata').execute()
+        headers = {h['name']: h['value'] for h in m['payload']['headers']}
+        emails.append({"from": headers.get('From'), "subject": headers.get('Subject')})
+    return jsonify({"emails": emails})
