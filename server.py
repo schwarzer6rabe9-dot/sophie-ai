@@ -84,3 +84,8 @@ if __name__ == '__main__':
 def health():
     return "OK", 200
 
+
+@app.route('/briefing', methods=['GET'])
+def briefing():
+    memory = load_memory()
+    return jsonify({"briefing": f"System online. Hallo Antonio, ich bin Sophie. Bereit für deine Befehle."})
