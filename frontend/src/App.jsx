@@ -46,7 +46,7 @@ function App() {
   const speak = async (text) => {
     try {
       setSpeaking(true)
-      const response = await axios.post("http://127.0.0.1:5001/tts",
+      const response = await axios.post("https://sophie-ai-jfna.onrender.com/tts",
         { text }, { responseType: "blob" }
       )
       const url = URL.createObjectURL(response.data)
@@ -62,7 +62,7 @@ function App() {
     if (lower.includes("merke dir") || lower.includes("vergiss nicht") || lower.includes("behalte")) {
       const fact = msg.replace(/merke dir[:\s]*/i, "").replace(/vergiss nicht[:\s]*/i, "").replace(/behalte[:\s]*/i, "").trim()
       if (fact) {
-        await axios.post("http://127.0.0.1:5001/memory/add", { fact })
+        await axios.post("https://sophie-ai-jfna.onrender.com/memory/add", { fact })
         setMemSaved(true)
         setTimeout(() => setMemSaved(false), 3000)
       }
@@ -79,7 +79,7 @@ function App() {
     setInput("")
     setLoading(true)
     try {
-      const response = await axios.post("http://127.0.0.1:5001/chat", {
+      const response = await axios.post("https://sophie-ai-jfna.onrender.com/chat", {
         messages: newMessages.map(m => ({ role: m.role === "assistant" ? "assistant" : "user", content: m.text })),
         save: true
       })
@@ -113,7 +113,7 @@ function App() {
   const handleStart = async () => {
     setStarted(true)
     try {
-      const res = await axios.get("http://127.0.0.1:5001/briefing")
+      const res = await axios.get("https://sophie-ai-jfna.onrender.com/briefing")
       const briefing = res.data.briefing
       setMessages([{ role: "assistant", text: briefing }])
       await speak(briefing)
