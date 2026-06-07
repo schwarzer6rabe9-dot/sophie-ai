@@ -68,7 +68,7 @@ Aktuelle Zeit: {datetime.now().strftime('%H:%M Uhr, %d.%m.%Y')}
 Was du weisst: {'; '.join(facts) if facts else 'Noch nichts gespeichert.'}
 Letzte Gespräche: {'; '.join(recent) if recent else 'Keine.'}"""
     response = anthropic_client.messages.create(
-        model="claude-sonnet-4-20250514",
+        model="claude-sonnet-4-6",
         max_tokens=500,
         system=system_prompt,
         messages=[{"role": "user", "content": user_message}]
