@@ -9,7 +9,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-app = Flask(__name__, static_folder='frontend/dist', static_url_path='')
+app = Flask(__name__, static_folder='frontend/dist', static_url_path='/assets')
 CORS(app)
 
 anthropic_client = anthropic.Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY"))
@@ -198,3 +198,8 @@ def gmail_unread():
 def debug_routes():
     rules = [str(r) for r in app.url_map.iter_rules()]
     return jsonify({"routes": rules, "total": len(rules)})
+
+@app.route('/')
+@app.route('/index.html')
+def index():
+    return send_from_directory(app.static_folder, 'index.html')
