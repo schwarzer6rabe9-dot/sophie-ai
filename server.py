@@ -114,9 +114,6 @@ def briefing():
     memory = load_memory()
     return jsonify({"briefing": f"System online. Hallo Antonio, ich bin Sophie. Bereit für deine Befehle."})
 
-if __name__ == '__main__':
-    port = int(os.environ.get('PORT', 5001))
-    app.run(debug=False, host='0.0.0.0', port=port)
 
 from google.oauth2.credentials import Credentials
 from google_auth_oauthlib.flow import Flow
@@ -203,3 +200,6 @@ def debug_routes():
 @app.route('/index.html')
 def index():
     return send_from_directory(app.static_folder, 'index.html')
+if __name__ == '__main__':
+    port = int(os.environ.get('PORT', 5001))
+    app.run(debug=False, host='0.0.0.0', port=port)
