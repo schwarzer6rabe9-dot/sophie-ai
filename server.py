@@ -192,3 +192,10 @@ def gmail_unread():
         headers = {h['name']: h['value'] for h in m['payload']['headers']}
         emails.append({"from": headers.get('From'), "subject": headers.get('Subject')})
     return jsonify({"emails": emails})
+
+@app.route('/', defaults={'path': ''})
+@app.route('/<path:path>')
+def serve_react(path):
+    if path and not path.startswith('api') and os.path.exists(os.path.join(app.static_folder, path)):
+        return send_from_directory(app.static_folder, path)
+    return send_from_directory(app.static_folder, 'index.html')
