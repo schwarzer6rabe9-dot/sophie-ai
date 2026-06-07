@@ -196,6 +196,6 @@ def gmail_unread():
 @app.route('/', defaults={'path': ''})
 @app.route('/<path:path>')
 def serve_react(path):
-    if path and not path.startswith('api') and os.path.exists(os.path.join(app.static_folder, path)):
+    if path and not path.startswith('api') and not path.startswith('auth') and not path.startswith('chat') and not path.startswith('tts') and not path.startswith('memory') and not path.startswith('health') and not path.startswith('gmail') and not path.startswith('briefing') and os.path.exists(os.path.join(app.static_folder, path)):
         return send_from_directory(app.static_folder, path)
     return send_from_directory(app.static_folder, 'index.html')
