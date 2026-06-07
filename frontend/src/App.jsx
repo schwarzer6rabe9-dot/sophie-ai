@@ -196,7 +196,21 @@ function App() {
         <div style={{ fontSize: 10, color: "rgba(0,212,255,0.35)", letterSpacing: 3 }}>
           {time.toLocaleTimeString("de-DE")}
         </div>
-        <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+  
+      <button
+        onClick={() => fetch('https://sophie-ai-jfna.onrender.com/auth/google')
+          .then(r => r.json())
+          .then(d => window.open(d.auth_url, '_self'))}
+        style={{
+          position: 'fixed', top: 12, right: 16, zIndex: 999,
+          background: 'rgba(0,212,255,0.15)', border: '1px solid rgba(0,212,255,0.4)',
+          color: '#00d4ff', padding: '4px 12px', borderRadius: 20,
+          fontSize: 11, letterSpacing: 2, cursor: 'pointer'
+        }}
+      >
+        ● GMAIL
+      </button>
+      <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
           {memSaved && (
             <span style={{ fontSize: 8, color: "#a78bfa", letterSpacing: 2, animation: "fadeIn 0.3s ease" }}>
               ◉ GESPEICHERT
