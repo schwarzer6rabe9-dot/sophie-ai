@@ -118,14 +118,14 @@ def get_flow():
 @app.route('/auth/google')
 def auth_google():
     flow = get_flow()
-    auth_url, _ = flow.authorization_url(prompt='consent', access_type='offline')
+    auth_url, _ = flow.authorization_url(prompt="consent", access_type="offline", include_granted_scopes="true")
     return jsonify({"auth_url": auth_url})
 
 @app.route('/oauth/callback')
 def oauth_callback():
     try:
         flow = get_flow()
-        flow.fetch_token(authorization_response=request.url.replace('http://', 'https://'))
+        flow.fetch_token(authorization_response=request.url.replace('http://', 'https://'), code_verifier=None)
         creds = flow.credentials
         memory = load_memory()
         memory['google_token'] = {"token": creds.token, "refresh_token": creds.refresh_token, "client_id": GOOGLE_CLIENT_ID, "client_secret": GOOGLE_CLIENT_SECRET, "token_uri": "https://oauth2.googleapis.com/token"}
