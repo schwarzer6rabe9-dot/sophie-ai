@@ -8,12 +8,12 @@ function OrbitRing({ radius, duration, color, size, offset = 0 }) {
     <div style={{
       position: "absolute", width: radius * 2, height: radius * 2,
       borderRadius: "50%", border: `1px solid ${color}`,
-      opacity: 0.4, top: "50%", left: "50%",
+      opacity: 1, top: "50%", left: "50%",
       transform: "translate(-50%, -50%)",
     }}>
       <div style={{
         position: "absolute", width: size, height: size, borderRadius: "50%",
-        background: color, boxShadow: `0 0 6px ${color}`,
+        background: color, boxShadow: `0 0 10px ${color}`,
         top: "50%", left: "50%", marginTop: -size/2, marginLeft: -radius - size/2,
         animation: `orbit ${duration}s linear infinite`,
         animationDelay: `${offset}s`,
@@ -33,9 +33,11 @@ function App() {
   const [time, setTime] = useState(new Date())
   const [memSaved, setMemSaved] = useState(false)
   const [gmailConnected, setGmailConnected] = useState(false)
+  const canvasRef = useRef(null)
   const audioRef = useRef(null)
   const recognitionRef = useRef(null)
   const messagesEndRef = useRef(null)
+  const animRef = useRef(null)
 
   useEffect(() => {
     const timer = setInterval(() => setTime(new Date()), 1000)
@@ -46,12 +48,96 @@ function App() {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" })
   }, [messages])
 
-  // Check Gmail connection on start
   useEffect(() => {
     if (started) {
-      axios.get(`${API}/gmail/unread`)
-        .then(() => setGmailConnected(true))
-        .catch(() => setGmailConnected(false))
+      axios.get(`${API}/gmail/unread`).then(() => setGmailConnected(true)).catch(() => {})
+    }
+  }, [started])
+
+  useEffect(() => {
+    if (!started) return
+    const canvas = canvasRef.current
+    if (!canvas) return
+    const ctx = canvas.getContext('2d')
+    let W, H, t = 0
+
+    const stars = Array.from({length: 220}, () => ({
+      x: Math.random(), y: Math.random(),
+      r: Math.random()*1.4+0.2,
+      speed: Math.random()*0.00015+0.00003,
+      op: Math.random()*0.7+0.2,
+      tw: Math.random()*Math.PI*2
+    }))
+
+    const nebulas = [
+      {x:0.15,y:0.2,r:190,c:'0,80,180'},
+      {x:0.78,y:0.25,r:160,c:'70,20,150'},
+      {x:0.5,y:0.65,r:210,c:'0,60,160'},
+      {x:0.88,y:0.72,r:130,c:'90,0,170'},
+    ]
+
+    function resize() {
+      W = canvas.width = canvas.offsetWidth
+      H = canvas.height = canvas.offsetHeight
+    }
+    resize()
+    window.addEventListener('resize', resize)
+
+    function draw() {
+      t += 0.005
+      ctx.fillStyle = '#00040e'
+      ctx.fillRect(0,0,W,H)
+
+      nebulas.forEach(n => {
+        const g = ctx.createRadialGradient(n.x*W,n.y*H,0,n.x*W,n.y*H,n.r)
+        g.addColorStop(0,`rgba(${n.c},0.07)`)
+        g.addColorStop(1,`rgba(${n.c},0)`)
+        ctx.fillStyle = g
+        ctx.beginPath(); ctx.arc(n.x*W,n.y*H,n.r,0,Math.PI*2); ctx.fill()
+      })
+
+      const mx=W*0.82, my=H*0.17, mr=55
+      const mg = ctx.createRadialGradient(mx-8,my-8,4,mx,my,mr*2.2)
+      mg.addColorStop(0,'rgba(220,235,255,0.18)')
+      mg.addColorStop(0.5,'rgba(160,190,255,0.07)')
+      mg.addColorStop(1,'rgba(80,120,255,0)')
+      ctx.fillStyle = mg
+      ctx.beginPath(); ctx.arc(mx,my,mr*2.2,0,Math.PI*2); ctx.fill()
+      ctx.beginPath(); ctx.arc(mx,my,mr,0,Math.PI*2)
+      ctx.fillStyle = 'rgba(200,220,255,0.08)'
+      ctx.strokeStyle = 'rgba(200,220,255,0.15)'
+      ctx.lineWidth = 1; ctx.fill(); ctx.stroke()
+
+      stars.forEach(s => {
+        s.tw += 0.018
+        const op = s.op*(0.5+0.5*Math.sin(s.tw))
+        ctx.beginPath(); ctx.arc(s.x*W,s.y*H,s.r,0,Math.PI*2)
+        ctx.fillStyle = `rgba(220,235,255,${op})`; ctx.fill()
+        s.y += s.speed; if(s.y>1){s.y=0;s.x=Math.random()}
+      })
+
+      const cx=W*0.5, cy=H*0.42
+      const orbits = [
+        {r:48,speed:0.7,size:5,col:'150,210,255'},
+        {r:70,speed:-0.45,size:6.5,col:'160,120,255'},
+        {r:93,speed:0.3,size:4,col:'150,210,255'},
+      ]
+      orbits.forEach((o,i) => {
+        const angle = t*o.speed+i*2.1
+        const px = cx+Math.cos(angle)*o.r
+        const py = cy+Math.sin(angle)*o.r
+        ctx.beginPath(); ctx.arc(px,py,o.size,0,Math.PI*2)
+        ctx.fillStyle = `rgba(${o.col},0.9)`
+        ctx.shadowBlur=12; ctx.shadowColor=`rgba(${o.col},0.7)`
+        ctx.fill(); ctx.shadowBlur=0
+      })
+
+      animRef.current = requestAnimationFrame(draw)
+    }
+    draw()
+    return () => {
+      cancelAnimationFrame(animRef.current)
+      window.removeEventListener('resize', resize)
     }
   }, [started])
 
@@ -70,7 +156,7 @@ function App() {
   const checkForMemory = async (msg) => {
     const lower = msg.toLowerCase()
     if (lower.includes("merke dir") || lower.includes("vergiss nicht") || lower.includes("behalte")) {
-      const fact = msg.replace(/merke dir[:\s]*/i, "").replace(/vergiss nicht[:\s]*/i, "").replace(/behalte[:\s]*/i, "").trim()
+      const fact = msg.replace(/merke dir[:\s]*/i,"").replace(/vergiss nicht[:\s]*/i,"").replace(/behalte[:\s]*/i,"").trim()
       if (fact) {
         await axios.post(`${API}/memory/add`, { fact })
         setMemSaved(true)
@@ -87,7 +173,7 @@ function App() {
       const list = emails.map(e => `Von: ${e.from} | Betreff: ${e.subject}`).join("\n")
       return `Du hast ${emails.length} ungelesene Email(s):\n${list}`
     } catch (e) {
-      return "Gmail nicht verbunden. Bitte klicke auf GMAIL um dich zu verbinden."
+      return "Gmail nicht verbunden."
     }
   }
 
@@ -100,15 +186,11 @@ function App() {
     setMessages(newMessages)
     setInput("")
     setLoading(true)
-
     try {
-      // Check if asking about emails
       const lower = msg.toLowerCase()
-      if (lower.includes("email") || lower.includes("mail") || lower.includes("postfach") || lower.includes("nachrichten")) {
+      if (lower.includes("email") || lower.includes("mail") || lower.includes("postfach")) {
         const emailInfo = await checkGmail()
-        const response = await axios.post(`${API}/chat`, {
-          message: `Der Nutzer fragt nach Emails. Hier sind die aktuellen ungelesenen Emails: ${emailInfo}. Beantworte auf Deutsch freundlich.`
-        })
+        const response = await axios.post(`${API}/chat`, { message: `Nutzer fragt nach Emails: ${emailInfo}. Antworte auf Deutsch.` })
         const reply = response.data.reply
         setMessages([...newMessages, { role: "assistant", text: reply }])
         setGmailConnected(true)
@@ -126,21 +208,15 @@ function App() {
   }
 
   const startListening = () => {
-    const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition
-    if (!SpeechRecognition) return
-    const recognition = new SpeechRecognition()
-    recognition.lang = "de-DE"
-    recognition.continuous = false
-    recognition.interimResults = false
-    recognition.onstart = () => setListening(true)
-    recognition.onresult = (e) => {
-      setListening(false)
-      sendMessage(e.results[0][0].transcript)
-    }
-    recognition.onerror = () => setListening(false)
-    recognition.onend = () => setListening(false)
-    recognitionRef.current = recognition
-    recognition.start()
+    const SR = window.SpeechRecognition || window.webkitSpeechRecognition
+    if (!SR) return
+    const r = new SR()
+    r.lang = "de-DE"; r.continuous = false; r.interimResults = false
+    r.onstart = () => setListening(true)
+    r.onresult = (e) => { setListening(false); sendMessage(e.results[0][0].transcript) }
+    r.onerror = () => setListening(false)
+    r.onend = () => setListening(false)
+    recognitionRef.current = r; r.start()
   }
 
   const handleStart = async () => {
@@ -158,191 +234,111 @@ function App() {
   }
 
   const connectGmail = () => {
-    fetch(`${API}/auth/google`)
-      .then(r => r.json())
-      .then(d => window.open(d.auth_url, '_self'))
+    fetch(`${API}/auth/google`).then(r=>r.json()).then(d=>window.open(d.auth_url,'_self'))
   }
 
-  const statusColor = speaking ? "#a78bfa" : listening ? "#f472b6" : "#00d4ff"
+  const statusText = speaking ? "◉ SPRICHT" : listening ? "◉ HÖRT" : loading ? "◉ DENKT" : "◎ BEREIT"
+
+  const styles = {
+    page: { minHeight:"100vh", background:"#00040e", fontFamily:"'Courier New',monospace", color:"#fff", overflow:"hidden", position:"relative" },
+    canvas: { position:"absolute", top:0, left:0, width:"100%", height:"100%" },
+    ui: { position:"relative", zIndex:10, minHeight:"100vh", display:"flex", flexDirection:"column", alignItems:"center", justifyContent:"space-between", padding:"16px" },
+    topBar: { width:"100%", display:"flex", justifyContent:"space-between", alignItems:"center", padding:"8px 20px", background:"rgba(0,0,0,0.45)", borderRadius:"30px", border:"1px solid rgba(180,220,255,0.18)", backdropFilter:"blur(12px)" },
+    logo: { fontSize:"12px", letterSpacing:"4px", color:"#ffffff", fontWeight:"bold", textShadow:"0 0 10px rgba(150,210,255,0.8)" },
+    clock: { fontSize:"12px", letterSpacing:"2px", color:"rgba(220,240,255,0.7)" },
+    status: { fontSize:"10px", letterSpacing:"2px", color:"rgba(180,230,255,0.65)" },
+    center: { display:"flex", flexDirection:"column", alignItems:"center", gap:"14px", flex:1, justifyContent:"center" },
+    sophieWrap: { position:"relative", width:"200px", height:"200px" },
+    core: { position:"absolute", top:"50%", left:"50%", transform:"translate(-50%,-50%)", width:"68px", height:"68px", borderRadius:"50%", border:"2px solid rgba(200,230,255,0.8)", background:"radial-gradient(circle,rgba(150,200,255,0.15),transparent)", display:"flex", alignItems:"center", justifyContent:"center", fontSize:"26px", animation:"corepulse 3s ease-in-out infinite", color:"#fff" },
+    sophieName: { fontSize:"15px", letterSpacing:"6px", color:"#ffffff", fontWeight:"bold", textShadow:"0 0 15px rgba(150,210,255,0.9)" },
+    sophieSub: { fontSize:"10px", letterSpacing:"3px", color:"rgba(200,230,255,0.6)", marginTop:"5px", textAlign:"center" },
+    bottom: { width:"100%", display:"flex", flexDirection:"column", gap:"10px", alignItems:"center" },
+    btnRow: { display:"flex", gap:"10px", justifyContent:"center", flexWrap:"wrap", alignItems:"center" },
+    chatBox: { width:"100%", maxWidth:"520px", background:"rgba(0,5,20,0.6)", border:"1px solid rgba(180,220,255,0.18)", borderRadius:"18px", backdropFilter:"blur(14px)", overflow:"hidden" },
+    chatLog: { padding:"10px 14px", maxHeight:"80px", overflowY:"auto", fontSize:"11px", lineHeight:"1.7", color:"rgba(220,240,255,0.85)" },
+    inputRow: { display:"flex", borderTop:"1px solid rgba(180,220,255,0.12)" },
+    chatInput: { flex:1, padding:"10px 14px", background:"transparent", border:"none", color:"#ffffff", fontSize:"11px", fontFamily:"'Courier New',monospace", outline:"none" },
+    chatSend: { padding:"10px 16px", background:"rgba(150,200,255,0.1)", border:"none", borderLeft:"1px solid rgba(180,220,255,0.12)", color:"#e0f0ff", cursor:"pointer", fontSize:"13px" },
+  }
+
+  const btnStyle = (type) => {
+    const base = { padding:"7px 18px", borderRadius:"22px", fontFamily:"'Courier New',monospace", fontSize:"10px", letterSpacing:"2px", cursor:"pointer", fontWeight:"bold", border:"1px solid" }
+    if (type==="green") return {...base, borderColor:"rgba(0,255,150,0.5)", background:"rgba(0,220,130,0.12)", color:"#b0ffe0"}
+    if (type==="purple") return {...base, borderColor:"rgba(180,120,255,0.5)", background:"rgba(160,100,255,0.12)", color:"#ddc0ff"}
+    return {...base, borderColor:"rgba(150,200,255,0.5)", background:"rgba(100,170,255,0.15)", color:"#e0f0ff"}
+  }
+
+  const micStyle = { width:"54px", height:"54px", borderRadius:"50%", border:"2px solid rgba(200,230,255,0.55)", background: listening ? "rgba(244,114,182,0.2)" : "rgba(150,200,255,0.1)", color:"#fff", fontSize:"22px", cursor:"pointer", display:"flex", alignItems:"center", justifyContent:"center" }
 
   if (!started) {
     return (
-      <div style={{
-        minHeight: "100vh",
-        background: "radial-gradient(ellipse at center, #0d1b2a 0%, #000510 100%)",
-        display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
-        fontFamily: "'Courier New', monospace", color: "#00d4ff", overflow: "hidden"
-      }}>
-        <style>{`@keyframes orbit { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }`}</style>
-        <div style={{ position: "relative", width: 260, height: 260, marginBottom: 40 }}>
-          {[
-            { r: 120, dur: 22, color: "rgba(0,212,255,0.4)", size: 5, off: 0 },
-            { r: 96, dur: 15, color: "rgba(124,58,237,0.6)", size: 6, off: -4 },
-            { r: 72, dur: 10, color: "rgba(0,212,255,0.5)", size: 4, off: -2 },
-            { r: 50, dur: 6, color: "rgba(244,114,182,0.5)", size: 5, off: -1 },
-          ].map((o, i) => <OrbitRing key={i} radius={o.r} duration={o.dur} color={o.color} size={o.size} offset={o.off}/>)}
-          <div style={{
-            position: "absolute", top: "50%", left: "50%",
-            transform: "translate(-50%, -50%)",
-            width: 70, height: 70, borderRadius: "50%",
-            background: "radial-gradient(circle, rgba(0,212,255,0.15), transparent)",
-            border: "2px solid #00d4ff", boxShadow: "0 0 25px rgba(0,212,255,0.3)",
-            display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center",
-          }}>
-            <div style={{ fontSize: 10, letterSpacing: 2 }}>SOPHIE</div>
-            <div style={{ fontSize: 7, color: "#7c3aed", letterSpacing: 1 }}>AI v2.0</div>
+      <div style={styles.page}>
+        <canvas ref={canvasRef}/>
+        <style>{`@keyframes orbit{from{transform:rotate(0deg)}to{transform:rotate(360deg)}} @keyframes corepulse{0%,100%{box-shadow:0 0 20px rgba(150,200,255,0.3)}50%{box-shadow:0 0 45px rgba(150,200,255,0.6)}}`}</style>
+        <div style={{...styles.ui, justifyContent:"center", gap:"40px"}}>
+          <div style={styles.sophieWrap}>
+            {[[96,"rgba(200,230,255,0.25)"],[140,"rgba(180,200,255,0.15)"],[186,"rgba(160,190,255,0.1)"]].map(([s,c],i) => (
+              <div key={i} style={{position:"absolute",top:"50%",left:"50%",width:s,height:s,borderRadius:"50%",border:`1px solid ${c}`,transform:"translate(-50%,-50%)"}}/>
+            ))}
+            <div style={styles.core}>✦</div>
           </div>
+          <div style={{textAlign:"center"}}>
+            <div style={styles.sophieName}>SOPHIE</div>
+            <div style={styles.sophieSub}>AI v2.0 · PERSONAL ASSISTANT</div>
+          </div>
+          <button onClick={handleStart} style={{padding:"14px 50px", background:"transparent", border:"1px solid rgba(200,230,255,0.5)", color:"#ffffff", fontFamily:"Courier New", fontSize:"12px", letterSpacing:"5px", cursor:"pointer", borderRadius:"30px", fontWeight:"bold", textShadow:"0 0 10px rgba(150,210,255,0.8)"}}>
+            ▶ SYSTEM STARTEN
+          </button>
         </div>
-        <button onClick={handleStart} style={{
-          padding: "12px 44px", background: "transparent",
-          border: "1px solid #00d4ff", color: "#00d4ff",
-          fontFamily: "Courier New", fontSize: 11, letterSpacing: 4, cursor: "pointer",
-          boxShadow: "0 0 15px rgba(0,212,255,0.2)"
-        }}>▶ SYSTEM STARTEN</button>
       </div>
     )
   }
 
   return (
-    <div style={{
-      height: "100vh", overflow: "hidden",
-      background: "radial-gradient(ellipse at center, #0d1b2a 0%, #000510 100%)",
-      display: "flex", flexDirection: "column",
-      fontFamily: "'Courier New', monospace", color: "#00d4ff", position: "relative"
-    }}>
-      <style>{`
-        @keyframes orbit { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
-        @keyframes pulse { 0%,100%{opacity:0.8;transform:translate(-50%,-50%) scale(1)}50%{opacity:1;transform:translate(-50%,-50%) scale(1.06)} }
-        @keyframes fadeIn { from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:translateY(0)} }
-        ::-webkit-scrollbar { width: 3px; }
-        ::-webkit-scrollbar-thumb { background: rgba(0,212,255,0.15); }
-      `}</style>
-      <div style={{
-        position: "absolute", inset: 0, pointerEvents: "none",
-        backgroundImage: "linear-gradient(rgba(0,212,255,0.015) 1px, transparent 1px), linear-gradient(90deg, rgba(0,212,255,0.015) 1px, transparent 1px)",
-        backgroundSize: "50px 50px"
-      }}/>
-
-      {/* Header */}
-      <div style={{
-        display: "flex", justifyContent: "space-between", alignItems: "center",
-        padding: "8px 24px", borderBottom: "1px solid rgba(0,212,255,0.1)",
-        background: "rgba(0,0,0,0.3)", zIndex: 1, flexShrink: 0
-      }}>
-        <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-          <div style={{ width: 6, height: 6, borderRadius: "50%", background: statusColor, boxShadow: `0 0 6px ${statusColor}` }}/>
-          <span style={{ fontSize: 10, letterSpacing: 4 }}>SOPHIE AI</span>
-        </div>
-        <div style={{ fontSize: 10, color: "rgba(0,212,255,0.35)", letterSpacing: 3 }}>
-          {time.toLocaleTimeString("de-DE")}
-        </div>
-        <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-          <button onClick={connectGmail} style={{
-            background: gmailConnected ? "rgba(0,255,128,0.15)" : "rgba(0,212,255,0.15)",
-            border: `1px solid ${gmailConnected ? "rgba(0,255,128,0.4)" : "rgba(0,212,255,0.4)"}`,
-            color: gmailConnected ? "#00ff80" : "#00d4ff",
-            padding: "4px 12px", borderRadius: 20,
-            fontSize: 11, letterSpacing: 2, cursor: "pointer"
-          }}>
-            {gmailConnected ? "✓ GMAIL" : "● GMAIL"}
-          </button>
-          {memSaved && (
-            <span style={{ fontSize: 8, color: "#a78bfa", letterSpacing: 2, animation: "fadeIn 0.3s ease" }}>
-              ◉ GESPEICHERT
-            </span>
-          )}
-          <div style={{ fontSize: 9, letterSpacing: 3, color: statusColor }}>
-            {speaking ? "◉ SPRICHT" : listening ? "◉ HÖRT" : loading ? "◉ DENKT" : "◎ BEREIT"}
-          </div>
-        </div>
-      </div>
-
-      <div style={{ flex: 1, display: "flex", overflow: "hidden", zIndex: 1 }}>
-        <div style={{
-          flex: 1, display: "flex", flexDirection: "column",
-          alignItems: "center", justifyContent: "center", position: "relative"
-        }}>
-          <div style={{ position: "relative", width: 280, height: 280 }}>
-            {[
-              { r: 130, dur: 25, color: "rgba(0,212,255,0.3)", size: 5, off: 0 },
-              { r: 105, dur: 17, color: "rgba(124,58,237,0.5)", size: 7, off: -5 },
-              { r: 80, dur: 11, color: "rgba(0,212,255,0.4)", size: 4, off: -2 },
-              { r: 56, dur: 7, color: "rgba(244,114,182,0.5)", size: 5, off: -1 },
-              { r: 36, dur: 4, color: "rgba(0,212,255,0.6)", size: 3, off: -3 },
-            ].map((o, i) => <OrbitRing key={i} radius={o.r} duration={o.dur} color={o.color} size={o.size} offset={o.off}/>)}
-            <div style={{
-              position: "absolute", top: "50%", left: "50%",
-              animation: "pulse 2.5s ease-in-out infinite",
-              width: 64, height: 64, borderRadius: "50%",
-              background: `radial-gradient(circle, ${speaking ? "rgba(167,139,250,0.25)" : "rgba(0,212,255,0.1)"}, transparent)`,
-              border: `2px solid ${statusColor}`,
-              boxShadow: `0 0 25px ${statusColor}50`,
-              display: "flex", alignItems: "center", justifyContent: "center",
-              fontSize: 22
-            }}>
-              {listening ? "🎙" : speaking ? "🔊" : "✦"}
-            </div>
-          </div>
-          <div style={{ textAlign: "center", marginTop: 16 }}>
-            <div style={{ fontSize: 10, letterSpacing: 4, color: statusColor }}>SOPHIE</div>
-            <div style={{ fontSize: 8, color: "rgba(0,212,255,0.3)", letterSpacing: 2, marginTop: 4 }}>
-              {speaking ? "SPRICHT..." : listening ? "HÖRT ZU..." : loading ? "DENKT..." : "BEREIT"}
-            </div>
-          </div>
-          <button onClick={startListening} disabled={listening || speaking} style={{
-            marginTop: 20, width: 50, height: 50, borderRadius: "50%",
-            background: listening ? "rgba(244,114,182,0.15)" : "rgba(0,212,255,0.05)",
-            border: `2px solid ${listening ? "#f472b6" : "rgba(0,212,255,0.3)"}`,
-            color: listening ? "#f472b6" : "#00d4ff",
-            fontSize: 18, cursor: "pointer",
-            boxShadow: listening ? "0 0 18px rgba(244,114,182,0.4)" : "0 0 8px rgba(0,212,255,0.1)"
-          }}>🎙</button>
-          <div style={{ marginTop: 12, fontSize: 8, color: "rgba(0,212,255,0.2)", letterSpacing: 2 }}>
-            TIPP: "Zeig meine Emails" | "Merke dir: ..."
-          </div>
+    <div style={styles.page}>
+      <canvas ref={canvasRef} style={styles.canvas}/>
+      <style>{`@keyframes orbit{from{transform:rotate(0deg)}to{transform:rotate(360deg)}} @keyframes corepulse{0%,100%{box-shadow:0 0 20px rgba(150,200,255,0.3)}50%{box-shadow:0 0 45px rgba(150,200,255,0.6)}}`}</style>
+      <div style={styles.ui}>
+        <div style={styles.topBar}>
+          <div style={styles.logo}>✦ SOPHIE AI</div>
+          <div style={styles.clock}>{time.toLocaleTimeString("de-DE")}</div>
+          <div style={styles.status}>{memSaved ? "◉ GESPEICHERT" : statusText}</div>
         </div>
 
-        {/* Right Log */}
-        <div style={{
-          width: 280, borderLeft: "1px solid rgba(0,212,255,0.08)",
-          display: "flex", flexDirection: "column", padding: "12px 14px",
-          background: "rgba(0,0,0,0.2)", flexShrink: 0
-        }}>
-          <div style={{ fontSize: 8, color: "rgba(0,212,255,0.25)", letterSpacing: 3, marginBottom: 10 }}>▸ LOG</div>
-          <div style={{ flex: 1, overflowY: "auto", marginBottom: 10 }}>
-            {messages.map((m, i) => (
-              <div key={i} style={{ marginBottom: 10 }}>
-                <div style={{ fontSize: 7, color: "rgba(0,212,255,0.25)", letterSpacing: 2, marginBottom: 3 }}>
-                  {m.role === "user" ? "▸ DU" : "▸ SOPHIE"}
-                </div>
-                <div style={{
-                  fontSize: 11, lineHeight: 1.5,
-                  color: m.role === "user" ? "rgba(196,181,253,0.7)" : "rgba(125,211,252,0.8)",
-                  borderLeft: `2px solid ${m.role === "user" ? "rgba(124,58,237,0.3)" : "rgba(0,212,255,0.2)"}`,
-                  paddingLeft: 8, whiteSpace: "pre-wrap"
-                }}>{m.text}</div>
-              </div>
+        <div style={styles.center}>
+          <div style={styles.sophieWrap}>
+            {[[96,"rgba(200,230,255,0.25)"],[140,"rgba(180,200,255,0.15)"],[186,"rgba(160,190,255,0.1)"]].map(([s,c],i) => (
+              <div key={i} style={{position:"absolute",top:"50%",left:"50%",width:s,height:s,borderRadius:"50%",border:`1px solid ${c}`,transform:"translate(-50%,-50%)"}}/>
             ))}
-            <div ref={messagesEndRef}/>
+            <div style={styles.core}>{listening?"🎙":speaking?"🔊":"✦"}</div>
           </div>
-          <div style={{ display: "flex", gap: 6 }}>
-            <input value={input} onChange={e => setInput(e.target.value)}
-              onKeyDown={e => e.key === "Enter" && sendMessage()}
-              placeholder="Tippen..."
-              style={{
-                flex: 1, padding: "8px 10px",
-                background: "rgba(0,212,255,0.03)",
-                border: "1px solid rgba(0,212,255,0.15)",
-                color: "#00d4ff", fontSize: 10, outline: "none",
-                fontFamily: "Courier New"
-              }}/>
-            <button onClick={() => sendMessage()} disabled={loading} style={{
-              padding: "8px 10px",
-              background: "rgba(0,212,255,0.06)",
-              border: "1px solid rgba(0,212,255,0.2)",
-              color: "#00d4ff", fontSize: 10, cursor: "pointer",
-              fontFamily: "Courier New"
-            }}>▶</button>
+          <div style={{textAlign:"center"}}>
+            <div style={styles.sophieName}>SOPHIE</div>
+            <div style={styles.sophieSub}>{speaking?"SPRICHT...":listening?"HÖRT ZU...":loading?"DENKT...":"BEREIT"}</div>
+          </div>
+        </div>
+
+        <div style={styles.bottom}>
+          <div style={styles.btnRow}>
+            <button onClick={connectGmail} style={btnStyle("green")}>{gmailConnected?"✓ GMAIL":"● GMAIL"}</button>
+            <button style={btnStyle("blue")}>◎ MEMORY</button>
+            <button style={btnStyle("purple")}>◈ KALENDER</button>
+            <button style={btnStyle("blue")}>⚙ SETTINGS</button>
+            <button onClick={startListening} style={micStyle}>🎙</button>
+          </div>
+          <div style={styles.chatBox}>
+            <div style={styles.chatLog}>
+              {messages.map((m,i) => (
+                <div key={i} style={{color: m.role==="user" ? "rgba(200,180,255,0.9)" : "rgba(180,230,255,0.9)", whiteSpace:"pre-wrap"}}>
+                  {m.role==="user"?"▸ DU: ":"▸ SOPHIE: "}{m.text}
+                </div>
+              ))}
+              <div ref={messagesEndRef}/>
+            </div>
+            <div style={styles.inputRow}>
+              <input value={input} onChange={e=>setInput(e.target.value)} onKeyDown={e=>e.key==="Enter"&&sendMessage()} placeholder="Schreib Sophie etwas..." style={styles.chatInput}/>
+              <button onClick={()=>sendMessage()} style={styles.chatSend}>▶</button>
+            </div>
           </div>
         </div>
       </div>
