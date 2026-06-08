@@ -125,7 +125,7 @@ def auth_google():
 def oauth_callback():
     try:
         flow = get_flow()
-        flow.fetch_token(authorization_response=request.url.replace('http://', 'https://'), code_verifier=None)
+        flow.fetch_token(authorization_response=request.url.replace('http://', 'https://'))
         creds = flow.credentials
         memory = load_memory()
         memory['google_token'] = {"token": creds.token, "refresh_token": creds.refresh_token, "client_id": GOOGLE_CLIENT_ID, "client_secret": GOOGLE_CLIENT_SECRET, "token_uri": "https://oauth2.googleapis.com/token"}
