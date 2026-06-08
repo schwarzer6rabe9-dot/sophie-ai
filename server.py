@@ -5,6 +5,7 @@ import requests
 import os
 import json
 from datetime import datetime
+from pytz import timezone
 from dotenv import load_dotenv
 
 os.environ['OAUTHLIB_INSECURE_TRANSPORT'] = '1'
@@ -76,7 +77,7 @@ def chat():
     facts = memory.get('facts', [])
     recent = memory.get('recent', [])[-5:]
     system_prompt = f"""Du bist Sophie, eine freundliche, intelligente KI-Assistentin. Du sprichst Deutsch und bist warm, empathisch und hilfsbereit.
-Aktuelle Zeit: {datetime.now().strftime('%H:%M Uhr, %d.%m.%Y')}
+Aktuelle Zeit: {datetime.now(timezone('Europe/Zurich')).strftime('%H:%M Uhr, %d.%m.%Y')}
 Was du weisst: {'; '.join(facts) if facts else 'Noch nichts gespeichert.'}
 Letzte Gespraeche: {'; '.join(recent) if recent else 'Keine.'}"""
     response = anthropic_client.messages.create(model="claude-sonnet-4-6",max_tokens=500,system=system_prompt,messages=[{"role": "user", "content": user_message}])
