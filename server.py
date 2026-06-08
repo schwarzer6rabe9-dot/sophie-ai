@@ -67,7 +67,47 @@ def health():
 
 @app.route('/briefing', methods=['GET'])
 def briefing():
-    return jsonify({"briefing": "System online. Hallo Antonio, ich bin Sophie. Bereit fuer deine Befehle."})
+    try:
+        from pytz import timezone
+        now = datetime.now(timezone('Europe/Zurich'))
+        hour = now.hour
+        if hour < 12:
+            gruss = 'Guten Morgen'
+        elif hour < 18:
+            gruss = 'Guten Tag'
+        else:
+            gruss = 'Guten Abend'
+        time_str = now.strftime('%H:%M Uhr')
+        weather_text = ''
+        try:
+            w = requests.get('https://wttr.in/Riffenmatt?format=%t+%C&lang=de', timeout=5)
+            if w.status_code == 200:
+                weather_text = f'Das Wetter in Riffenmatt: {w.text.strip()}.'
+        except:
+            weather_text = ''
+        memory = load_memory()
+        token_data = memory.get('google_token')
+        email_text = ''
+        if token_data:
+            try:
+                from google.oauth2.credentials import Credentials
+                from googleapiclient.discovery import build
+                creds = Credentials(token=token_data["token"],refresh_token=token_data.get("refresh_token"),client_id=token_data["client_id"],client_secret=token_data["client_secret"],token_uri=token_data["token_uri"])
+                service = build("gmail", "v1", credentials=creds)
+                results = service.users().messages().list(userId="me", labelIds=["UNREAD"], maxResults=3).execute()
+                messages = results.get("messages", [])
+                if messages:
+                    email_text = f"Du hast {len(messages)} ungelesene Emails."
+                else:
+                    email_text = "Keine ungelesenen Emails."
+            except:
+                email_text = ""
+        parts = [p for p in [weather_text, email_text] if p]
+        extra = " ".join(parts)
+        briefing_text = f"{gruss} Antonio! Es ist {time_str}. {extra} Was liegt heute an?"
+        return jsonify({"briefing": briefing_text})
+    except Exception as e:
+        return jsonify({"briefing": "Hallo Antonio! Ich bin Sophie, deine persoenliche Assistentin. Was kann ich heute fuer dich tun?"})
 
 @app.route('/chat', methods=['POST'])
 def chat():
