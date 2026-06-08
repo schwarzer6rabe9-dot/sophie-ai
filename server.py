@@ -3,6 +3,7 @@ from flask_cors import CORS
 import anthropic
 import requests
 import os
+os.environ["OAUTHLIB_INSECURE_TRANSPORT"] = "1"
 import json
 from datetime import datetime
 from dotenv import load_dotenv
