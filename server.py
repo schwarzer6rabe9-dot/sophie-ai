@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify, send_file, send_from_directory, redirect
+from flask import Flask, request, jsonify, send_file, send_from_directory
 from flask_cors import CORS
 import anthropic
 import requests
@@ -8,10 +8,10 @@ from datetime import datetime
 from dotenv import load_dotenv
 
 os.environ['OAUTHLIB_INSECURE_TRANSPORT'] = '1'
-
 load_dotenv()
 
 from google.oauth2.credentials import Credentials
+from google.oauth2 import id_token
 from google_auth_oauthlib.flow import Flow
 from googleapiclient.discovery import build
 
@@ -26,8 +26,8 @@ GOOGLE_CLIENT_SECRET = os.getenv("GOOGLE_CLIENT_SECRET")
 JSONBIN_BIN = os.getenv("JSONBIN_BIN")
 JSONBIN_KEY = os.getenv("JSONBIN_KEY")
 MEMORY_FILE = "memory.json"
-SCOPES = ["https://www.googleapis.com/auth/gmail.readonly","https://www.googleapis.com/auth/calendar.readonly"]
 REDIRECT_URI = "https://sophie-ai-jfna.onrender.com/oauth/callback"
+SCOPES = ["https://www.googleapis.com/auth/gmail.readonly","https://www.googleapis.com/auth/calendar.readonly"]
 
 anthropic_client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
 
@@ -66,7 +66,7 @@ def health():
 
 @app.route('/briefing', methods=['GET'])
 def briefing():
-    return jsonify({"briefing": "System online. Hallo Antonio, ich bin Sophie. Bereit für deine Befehle."})
+    return jsonify({"briefing": "System online. Hallo Antonio, ich bin Sophie. Bereit fuer deine Befehle."})
 
 @app.route('/chat', methods=['POST'])
 def chat():
@@ -112,23 +112,43 @@ def memory_add():
     save_memory(memory)
     return jsonify({"ok": True})
 
-def get_flow():
-    return Flow.from_client_config({"web":{"client_id":GOOGLE_CLIENT_ID,"client_secret":GOOGLE_CLIENT_SECRET,"auth_uri":"https://accounts.google.com/o/oauth2/auth","token_uri":"https://oauth2.googleapis.com/token","redirect_uris":[REDIRECT_URI]}},scopes=SCOPES,redirect_uri=REDIRECT_URI)
-
 @app.route('/auth/google')
 def auth_google():
-    flow = get_flow()
-    auth_url, _ = flow.authorization_url(prompt="consent", access_type="offline", include_granted_scopes="true")
+    auth_url = (
+        "https://accounts.google.com/o/oauth2/v2/auth"
+        f"?client_id={GOOGLE_CLIENT_ID}"
+        f"&redirect_uri={REDIRECT_URI}"
+        "&response_type=code"
+        "&scope=https://www.googleapis.com/auth/gmail.readonly+https://www.googleapis.com/auth/calendar.readonly"
+        "&access_type=offline"
+        "&prompt=consent"
+    )
     return jsonify({"auth_url": auth_url})
 
 @app.route('/oauth/callback')
 def oauth_callback():
     try:
-        flow = get_flow()
-        flow.fetch_token(authorization_response=request.url.replace('http://', 'https://'))
-        creds = flow.credentials
+        code = request.args.get('code')
+        if not code:
+            return "<h1>Fehler: Kein Code erhalten</h1>", 400
+        token_response = requests.post("https://oauth2.googleapis.com/token", data={
+            "code": code,
+            "client_id": GOOGLE_CLIENT_ID,
+            "client_secret": GOOGLE_CLIENT_SECRET,
+            "redirect_uri": REDIRECT_URI,
+            "grant_type": "authorization_code"
+        })
+        token_data = token_response.json()
+        if "error" in token_data:
+            return f"<h1>Fehler: {token_data}</h1>", 500
         memory = load_memory()
-        memory['google_token'] = {"token": creds.token, "refresh_token": creds.refresh_token, "client_id": GOOGLE_CLIENT_ID, "client_secret": GOOGLE_CLIENT_SECRET, "token_uri": "https://oauth2.googleapis.com/token"}
+        memory['google_token'] = {
+            "token": token_data.get("access_token"),
+            "refresh_token": token_data.get("refresh_token"),
+            "client_id": GOOGLE_CLIENT_ID,
+            "client_secret": GOOGLE_CLIENT_SECRET,
+            "token_uri": "https://oauth2.googleapis.com/token"
+        }
         save_memory(memory)
         return "<h1>✅ Google verbunden! Sophie kann jetzt Gmail und Kalender lesen. Du kannst dieses Fenster schliessen.</h1>"
     except Exception as e:
