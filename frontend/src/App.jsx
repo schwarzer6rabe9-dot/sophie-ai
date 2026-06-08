@@ -1,6 +1,8 @@
 import { useState, useRef, useEffect } from "react"
 import axios from "axios"
 
+const API = "https://sophie-ai-jfna.onrender.com"
+
 function OrbitRing({ radius, duration, color, size, offset = 0 }) {
   return (
     <div style={{
@@ -30,6 +32,7 @@ function App() {
   const [started, setStarted] = useState(false)
   const [time, setTime] = useState(new Date())
   const [memSaved, setMemSaved] = useState(false)
+  const [gmailConnected, setGmailConnected] = useState(false)
   const audioRef = useRef(null)
   const recognitionRef = useRef(null)
   const messagesEndRef = useRef(null)
@@ -43,12 +46,19 @@ function App() {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" })
   }, [messages])
 
+  // Check Gmail connection on start
+  useEffect(() => {
+    if (started) {
+      axios.get(`${API}/gmail/unread`)
+        .then(() => setGmailConnected(true))
+        .catch(() => setGmailConnected(false))
+    }
+  }, [started])
+
   const speak = async (text) => {
     try {
       setSpeaking(true)
-      const response = await axios.post("https://sophie-ai-jfna.onrender.com/tts",
-        { text }, { responseType: "blob" }
-      )
+      const response = await axios.post(`${API}/tts`, { text }, { responseType: "blob" })
       const url = URL.createObjectURL(response.data)
       const audio = new Audio(url)
       audioRef.current = audio
@@ -62,10 +72,22 @@ function App() {
     if (lower.includes("merke dir") || lower.includes("vergiss nicht") || lower.includes("behalte")) {
       const fact = msg.replace(/merke dir[:\s]*/i, "").replace(/vergiss nicht[:\s]*/i, "").replace(/behalte[:\s]*/i, "").trim()
       if (fact) {
-        await axios.post("https://sophie-ai-jfna.onrender.com/memory/add", { fact })
+        await axios.post(`${API}/memory/add`, { fact })
         setMemSaved(true)
         setTimeout(() => setMemSaved(false), 3000)
       }
+    }
+  }
+
+  const checkGmail = async () => {
+    try {
+      const res = await axios.get(`${API}/gmail/unread`)
+      const emails = res.data.emails || []
+      if (emails.length === 0) return "Du hast keine ungelesenen Emails."
+      const list = emails.map(e => `Von: ${e.from} | Betreff: ${e.subject}`).join("\n")
+      return `Du hast ${emails.length} ungelesene Email(s):\n${list}`
+    } catch (e) {
+      return "Gmail nicht verbunden. Bitte klicke auf GMAIL um dich zu verbinden."
     }
   }
 
@@ -78,13 +100,25 @@ function App() {
     setMessages(newMessages)
     setInput("")
     setLoading(true)
+
     try {
-      const response = await axios.post("https://sophie-ai-jfna.onrender.com/chat", {
-        message: msg
-      })
-      const reply = response.data.reply
-      setMessages([...newMessages, { role: "assistant", text: reply }])
-      await speak(reply)
+      // Check if asking about emails
+      const lower = msg.toLowerCase()
+      if (lower.includes("email") || lower.includes("mail") || lower.includes("postfach") || lower.includes("nachrichten")) {
+        const emailInfo = await checkGmail()
+        const response = await axios.post(`${API}/chat`, {
+          message: `Der Nutzer fragt nach Emails. Hier sind die aktuellen ungelesenen Emails: ${emailInfo}. Beantworte auf Deutsch freundlich.`
+        })
+        const reply = response.data.reply
+        setMessages([...newMessages, { role: "assistant", text: reply }])
+        setGmailConnected(true)
+        await speak(reply)
+      } else {
+        const response = await axios.post(`${API}/chat`, { message: msg })
+        const reply = response.data.reply
+        setMessages([...newMessages, { role: "assistant", text: reply }])
+        await speak(reply)
+      }
     } catch (e) {
       setMessages([...newMessages, { role: "assistant", text: "Fehler: " + e.message }])
     }
@@ -112,7 +146,7 @@ function App() {
   const handleStart = async () => {
     setStarted(true)
     try {
-      const res = await axios.get("https://sophie-ai-jfna.onrender.com/briefing")
+      const res = await axios.get(`${API}/briefing`)
       const briefing = res.data.briefing
       setMessages([{ role: "assistant", text: briefing }])
       await speak(briefing)
@@ -121,6 +155,12 @@ function App() {
       setMessages([{ role: "assistant", text: fallback }])
       await speak(fallback)
     }
+  }
+
+  const connectGmail = () => {
+    fetch(`${API}/auth/google`)
+      .then(r => r.json())
+      .then(d => window.open(d.auth_url, '_self'))
   }
 
   const statusColor = speaking ? "#a78bfa" : listening ? "#f472b6" : "#00d4ff"
@@ -196,21 +236,16 @@ function App() {
         <div style={{ fontSize: 10, color: "rgba(0,212,255,0.35)", letterSpacing: 3 }}>
           {time.toLocaleTimeString("de-DE")}
         </div>
-  
-      <button
-        onClick={() => fetch('https://sophie-ai-jfna.onrender.com/auth/google')
-          .then(r => r.json())
-          .then(d => window.open(d.auth_url, '_self'))}
-        style={{
-          position: 'fixed', top: 12, right: 16, zIndex: 999,
-          background: 'rgba(0,212,255,0.15)', border: '1px solid rgba(0,212,255,0.4)',
-          color: '#00d4ff', padding: '4px 12px', borderRadius: 20,
-          fontSize: 11, letterSpacing: 2, cursor: 'pointer'
-        }}
-      >
-        ● GMAIL
-      </button>
-      <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+        <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+          <button onClick={connectGmail} style={{
+            background: gmailConnected ? "rgba(0,255,128,0.15)" : "rgba(0,212,255,0.15)",
+            border: `1px solid ${gmailConnected ? "rgba(0,255,128,0.4)" : "rgba(0,212,255,0.4)"}`,
+            color: gmailConnected ? "#00ff80" : "#00d4ff",
+            padding: "4px 12px", borderRadius: 20,
+            fontSize: 11, letterSpacing: 2, cursor: "pointer"
+          }}>
+            {gmailConnected ? "✓ GMAIL" : "● GMAIL"}
+          </button>
           {memSaved && (
             <span style={{ fontSize: 8, color: "#a78bfa", letterSpacing: 2, animation: "fadeIn 0.3s ease" }}>
               ◉ GESPEICHERT
@@ -223,7 +258,6 @@ function App() {
       </div>
 
       <div style={{ flex: 1, display: "flex", overflow: "hidden", zIndex: 1 }}>
-        {/* Center Universe */}
         <div style={{
           flex: 1, display: "flex", flexDirection: "column",
           alignItems: "center", justifyContent: "center", position: "relative"
@@ -264,7 +298,7 @@ function App() {
             boxShadow: listening ? "0 0 18px rgba(244,114,182,0.4)" : "0 0 8px rgba(0,212,255,0.1)"
           }}>🎙</button>
           <div style={{ marginTop: 12, fontSize: 8, color: "rgba(0,212,255,0.2)", letterSpacing: 2 }}>
-            TIPP: "Merke dir: ..." zum Speichern
+            TIPP: "Zeig meine Emails" | "Merke dir: ..."
           </div>
         </div>
 
@@ -285,7 +319,7 @@ function App() {
                   fontSize: 11, lineHeight: 1.5,
                   color: m.role === "user" ? "rgba(196,181,253,0.7)" : "rgba(125,211,252,0.8)",
                   borderLeft: `2px solid ${m.role === "user" ? "rgba(124,58,237,0.3)" : "rgba(0,212,255,0.2)"}`,
-                  paddingLeft: 8
+                  paddingLeft: 8, whiteSpace: "pre-wrap"
                 }}>{m.text}</div>
               </div>
             ))}
