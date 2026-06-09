@@ -67,7 +67,6 @@ function App() {
       t += 0.005
       ctx.fillStyle = '#00040e'
       ctx.fillRect(0,0,W,H)
-
       nebulas.forEach(n => {
         const g = ctx.createRadialGradient(n.x*W,n.y*H,0,n.x*W,n.y*H,n.r)
         g.addColorStop(0,`rgba(${n.c},0.07)`)
@@ -75,7 +74,6 @@ function App() {
         ctx.fillStyle = g
         ctx.beginPath(); ctx.arc(n.x*W,n.y*H,n.r,0,Math.PI*2); ctx.fill()
       })
-
       const mx=W*0.82, my=H*0.17, mr=55
       const mg = ctx.createRadialGradient(mx-8,my-8,4,mx,my,mr*2.2)
       mg.addColorStop(0,'rgba(220,235,255,0.18)')
@@ -87,7 +85,6 @@ function App() {
       ctx.fillStyle = 'rgba(200,220,255,0.08)'
       ctx.strokeStyle = 'rgba(200,220,255,0.15)'
       ctx.lineWidth = 1; ctx.fill(); ctx.stroke()
-
       stars.forEach(s => {
         s.tw += 0.018
         const op = s.op*(0.5+0.5*Math.sin(s.tw))
@@ -95,8 +92,7 @@ function App() {
         ctx.fillStyle = `rgba(220,235,255,${op})`; ctx.fill()
         s.y += s.speed; if(s.y>1){s.y=0;s.x=Math.random()}
       })
-
-      const cx=W*0.5, cy=H*0.42
+      const cx=W*0.5, cy=H*0.35
       const orbits = [
         {r:48,speed:0.7,size:5,col:'150,210,255'},
         {r:70,speed:-0.45,size:6.5,col:'160,120,255'},
@@ -111,14 +107,10 @@ function App() {
         ctx.shadowBlur=12; ctx.shadowColor=`rgba(${o.col},0.7)`
         ctx.fill(); ctx.shadowBlur=0
       })
-
       animRef.current = requestAnimationFrame(draw)
     }
     draw()
-    return () => {
-      cancelAnimationFrame(animRef.current)
-      window.removeEventListener('resize', resize)
-    }
+    return () => { cancelAnimationFrame(animRef.current); window.removeEventListener('resize', resize) }
   }, [started])
 
   const speak = async (text) => {
@@ -205,7 +197,7 @@ function App() {
       setMessages([{ role: "assistant", text: briefing }])
       await speak(briefing)
     } catch (e) {
-      const fallback = "System online. Hallo Antonio, ich bin Sophie. Bereit fuer deine Befehle."
+      const fallback = "Hallo Antonio! Ich bin Sophie. Was liegt heute an?"
       setMessages([{ role: "assistant", text: fallback }])
       await speak(fallback)
     }
@@ -238,7 +230,7 @@ function App() {
           <div style={{fontSize:"15px",letterSpacing:"6px",color:"#ffffff",fontWeight:"bold",textShadow:"0 0 15px rgba(150,210,255,0.9)"}}>SOPHIE</div>
           <div style={{fontSize:"10px",letterSpacing:"3px",color:"rgba(200,230,255,0.6)",marginTop:"5px"}}>AI v2.0 · PERSONAL ASSISTANT</div>
         </div>
-        <button onClick={handleStart} style={{padding:"14px 50px",background:"transparent",border:"1px solid rgba(200,230,255,0.5)",color:"#ffffff",fontFamily:"Courier New",fontSize:"12px",letterSpacing:"5px",cursor:"pointer",borderRadius:"30px",fontWeight:"bold",textShadow:"0 0 10px rgba(150,210,255,0.8)"}}>
+        <button onClick={handleStart} style={{padding:"14px 50px",background:"transparent",border:"1px solid rgba(200,230,255,0.5)",color:"#ffffff",fontFamily:"Courier New",fontSize:"15px",letterSpacing:"5px",cursor:"pointer",borderRadius:"30px",fontWeight:"bold",textShadow:"0 0 10px rgba(150,210,255,0.8)"}}>
           SYSTEM STARTEN
         </button>
       </div>
@@ -246,55 +238,61 @@ function App() {
   }
 
   return (
-    <div style={{minHeight:"100vh", background:"#00040e", fontFamily:"'Courier New',monospace", color:"#fff", overflow:"hidden", position:"relative"}}>
+    <div style={{height:"100vh", background:"#00040e", fontFamily:"'Courier New',monospace", color:"#fff", overflow:"hidden", position:"relative", display:"flex", flexDirection:"column"}}>
       <canvas ref={canvasRef} style={{position:"absolute",top:0,left:0,width:"100%",height:"100%"}}/>
-      <style>{`@keyframes orbit{from{transform:rotate(0deg)}to{transform:rotate(360deg)}} @keyframes corepulse{0%,100%{box-shadow:0 0 20px rgba(150,200,255,0.3)}50%{box-shadow:0 0 45px rgba(150,200,255,0.6)}}`}</style>
-      <div style={{position:"relative",zIndex:10,minHeight:"100vh",display:"flex",flexDirection:"column",alignItems:"center",justifyContent:"space-between",padding:"16px"}}>
+      <style>{`@keyframes orbit{from{transform:rotate(0deg)}to{transform:rotate(360deg)}} @keyframes corepulse{0%,100%{box-shadow:0 0 20px rgba(150,200,255,0.3)}50%{box-shadow:0 0 45px rgba(150,200,255,0.6)}} ::-webkit-scrollbar{width:3px} ::-webkit-scrollbar-thumb{background:rgba(150,200,255,0.2)}`}</style>
 
-        <div style={{width:"100%",display:"flex",justifyContent:"space-between",alignItems:"center",padding:"8px 20px",background:"rgba(0,0,0,0.45)",borderRadius:"30px",border:"1px solid rgba(180,220,255,0.18)",backdropFilter:"blur(12px)"}}>
-          <div style={{fontSize:"12px",letterSpacing:"4px",color:"#ffffff",fontWeight:"bold",textShadow:"0 0 10px rgba(150,210,255,0.8)"}}>SOPHIE AI</div>
-          <div style={{fontSize:"12px",letterSpacing:"2px",color:"rgba(220,240,255,0.7)"}}>{time.toLocaleTimeString("de-DE")}</div>
+      <div style={{position:"relative",zIndex:10,display:"flex",flexDirection:"column",height:"100%",padding:"12px",gap:"10px"}}>
+
+        {/* TOP BAR */}
+        <div style={{display:"flex",justifyContent:"space-between",alignItems:"center",padding:"8px 20px",background:"rgba(0,0,0,0.45)",borderRadius:"30px",border:"1px solid rgba(180,220,255,0.18)",backdropFilter:"blur(12px)",flexShrink:0}}>
+          <div style={{fontSize:"15px",letterSpacing:"4px",color:"#ffffff",fontWeight:"bold",textShadow:"0 0 10px rgba(150,210,255,0.8)"}}>✦ SOPHIE AI</div>
+          <div style={{fontSize:"15px",letterSpacing:"2px",color:"rgba(220,240,255,0.7)"}}>{time.toLocaleTimeString("de-DE")}</div>
           <div style={{fontSize:"10px",letterSpacing:"2px",color:"rgba(180,230,255,0.65)"}}>{memSaved ? "GESPEICHERT" : statusText}</div>
         </div>
 
-        <div style={{display:"flex",flexDirection:"column",alignItems:"center",gap:"14px",flex:1,justifyContent:"center"}}>
-          <div style={{position:"relative",width:"200px",height:"200px"}}>
-            {[[96,"rgba(200,230,255,0.25)"],[140,"rgba(180,200,255,0.15)"],[186,"rgba(160,190,255,0.1)"]].map(([s,c],i) => (
+        {/* SOPHIE CENTER - kleinere Höhe */}
+        <div style={{display:"flex",flexDirection:"column",alignItems:"center",gap:"10px",flexShrink:0}}>
+          <div style={{position:"relative",width:"160px",height:"160px"}}>
+            {[[76,"rgba(200,230,255,0.25)"],[112,"rgba(180,200,255,0.15)"],[150,"rgba(160,190,255,0.1)"]].map(([s,c],i) => (
               <div key={i} style={{position:"absolute",top:"50%",left:"50%",width:s,height:s,borderRadius:"50%",border:`1px solid ${c}`,transform:"translate(-50%,-50%)"}}/>
             ))}
-            <div style={{position:"absolute",top:"50%",left:"50%",transform:"translate(-50%,-50%)",width:"68px",height:"68px",borderRadius:"50%",border:"2px solid rgba(200,230,255,0.8)",background:"radial-gradient(circle,rgba(150,200,255,0.15),transparent)",display:"flex",alignItems:"center",justifyContent:"center",fontSize:"26px",animation:"corepulse 3s ease-in-out infinite",color:"#fff"}}>
+            <div style={{position:"absolute",top:"50%",left:"50%",transform:"translate(-50%,-50%)",width:"56px",height:"56px",borderRadius:"50%",border:"2px solid rgba(200,230,255,0.8)",background:"radial-gradient(circle,rgba(150,200,255,0.15),transparent)",display:"flex",alignItems:"center",justifyContent:"center",fontSize:"22px",animation:"corepulse 3s ease-in-out infinite",color:"#fff"}}>
               {listening?"🎙":speaking?"🔊":"✦"}
             </div>
           </div>
           <div style={{textAlign:"center"}}>
-            <div style={{fontSize:"15px",letterSpacing:"6px",color:"#ffffff",fontWeight:"bold",textShadow:"0 0 15px rgba(150,210,255,0.9)"}}>SOPHIE</div>
-            <div style={{fontSize:"10px",letterSpacing:"3px",color:"rgba(200,230,255,0.6)",marginTop:"5px"}}>{statusText}</div>
+            <div style={{fontSize:"13px",letterSpacing:"5px",color:"#ffffff",fontWeight:"bold",textShadow:"0 0 15px rgba(150,210,255,0.9)"}}>SOPHIE</div>
+            <div style={{fontSize:"9px",letterSpacing:"3px",color:"rgba(200,230,255,0.6)",marginTop:"3px"}}>{statusText}</div>
           </div>
         </div>
 
-        <div style={{width:"100%",display:"flex",flexDirection:"column",gap:"10px",alignItems:"center"}}>
-          <div style={{display:"flex",gap:"10px",justifyContent:"center",flexWrap:"wrap",alignItems:"center"}}>
-            <button onClick={connectGmail} style={btnStyle("green")}>{gmailConnected?"✓ GMAIL":"GMAIL"}</button>
-            <button style={btnStyle("blue")}>MEMORY</button>
-            <button style={btnStyle("purple")}>KALENDER</button>
-            <button style={btnStyle("blue")}>SETTINGS</button>
-            <button onClick={startListening} style={{width:"54px",height:"54px",borderRadius:"50%",border:"2px solid rgba(200,230,255,0.55)",background:listening?"rgba(244,114,182,0.2)":"rgba(150,200,255,0.1)",color:"#fff",fontSize:"22px",cursor:"pointer",display:"flex",alignItems:"center",justifyContent:"center"}}>🎙</button>
+        {/* CHAT BOX - nimmt den Rest */}
+        <div style={{flex:1,display:"flex",flexDirection:"column",background:"rgba(0,5,20,0.65)",border:"1px solid rgba(180,220,255,0.18)",borderRadius:"18px",backdropFilter:"blur(14px)",overflow:"hidden",minHeight:0}}>
+          <div style={{flex:1,overflowY:"auto",padding:"16px 18px",fontSize:"15px",lineHeight:"1.8",minHeight:0}}>
+            {messages.map((m,i) => (
+              <div key={i} style={{marginBottom:"10px"}}>
+                <div style={{fontSize:"10px",letterSpacing:"2px",color:"rgba(150,200,255,0.5)",marginBottom:"4px"}}>{m.role==="user"?"▸ DU":"▸ SOPHIE"}</div>
+                <div style={{color:m.role==="user"?"rgba(200,180,255,0.9)":"rgba(180,230,255,0.95)",whiteSpace:"pre-wrap",paddingLeft:"8px",borderLeft:`2px solid ${m.role==="user"?"rgba(180,120,255,0.3)":"rgba(100,180,255,0.25)"}`}}>{m.text}</div>
+              </div>
+            ))}
+            <div ref={messagesEndRef}/>
           </div>
-          <div style={{width:"100%",maxWidth:"520px",background:"rgba(0,5,20,0.6)",border:"1px solid rgba(180,220,255,0.18)",borderRadius:"18px",backdropFilter:"blur(14px)",overflow:"hidden"}}>
-            <div style={{padding:"10px 14px",maxHeight:"100px",overflowY:"auto",fontSize:"11px",lineHeight:"1.7"}}>
-              {messages.map((m,i) => (
-                <div key={i} style={{color:m.role==="user"?"rgba(200,180,255,0.9)":"rgba(180,230,255,0.9)",whiteSpace:"pre-wrap"}}>
-                  {m.role==="user"?"DU: ":"SOPHIE: "}{m.text}
-                </div>
-              ))}
-              <div ref={messagesEndRef}/>
-            </div>
-            <div style={{display:"flex",borderTop:"1px solid rgba(180,220,255,0.12)"}}>
-              <input value={input} onChange={e=>setInput(e.target.value)} onKeyDown={e=>e.key==="Enter"&&sendMessage()} placeholder="Schreib Sophie etwas..." style={{flex:1,padding:"10px 14px",background:"transparent",border:"none",color:"#ffffff",fontSize:"11px",fontFamily:"'Courier New',monospace",outline:"none"}}/>
-              <button onClick={()=>sendMessage()} style={{padding:"10px 16px",background:"rgba(150,200,255,0.1)",border:"none",borderLeft:"1px solid rgba(180,220,255,0.12)",color:"#e0f0ff",cursor:"pointer",fontSize:"13px"}}>▶</button>
-            </div>
+          <div style={{display:"flex",borderTop:"1px solid rgba(180,220,255,0.12)",flexShrink:0}}>
+            <input value={input} onChange={e=>setInput(e.target.value)} onKeyDown={e=>e.key==="Enter"&&sendMessage()} placeholder="Schreib Sophie etwas..." style={{flex:1,padding:"12px 16px",background:"transparent",border:"none",color:"#ffffff",fontSize:"15px",fontFamily:"'Courier New',monospace",outline:"none"}}/>
+            <button onClick={()=>sendMessage()} style={{padding:"12px 18px",background:"rgba(150,200,255,0.1)",border:"none",borderLeft:"1px solid rgba(180,220,255,0.12)",color:"#e0f0ff",cursor:"pointer",fontSize:"14px"}}>▶</button>
           </div>
         </div>
+
+        {/* BUTTONS */}
+        <div style={{display:"flex",gap:"8px",justifyContent:"center",flexWrap:"wrap",alignItems:"center",flexShrink:0}}>
+          <button onClick={connectGmail} style={btnStyle("green")}>{gmailConnected?"✓ GMAIL":"GMAIL"}</button>
+          <button style={btnStyle("blue")}>MEMORY</button>
+          <button style={btnStyle("purple")}>KALENDER</button>
+          <button style={btnStyle("blue")}>SETTINGS</button>
+          <button onClick={startListening} style={{width:"48px",height:"48px",borderRadius:"50%",border:"2px solid rgba(200,230,255,0.55)",background:listening?"rgba(244,114,182,0.2)":"rgba(150,200,255,0.1)",color:"#fff",fontSize:"20px",cursor:"pointer",display:"flex",alignItems:"center",justifyContent:"center"}}>🎙</button>
+        </div>
+
       </div>
     </div>
   )
