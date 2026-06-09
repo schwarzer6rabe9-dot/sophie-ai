@@ -13,6 +13,9 @@ function App() {
   const [time, setTime] = useState(new Date())
   const [memSaved, setMemSaved] = useState(false)
   const [gmailConnected, setGmailConnected] = useState(false)
+  const [showCalendar, setShowCalendar] = useState(false)
+  const [calendarEvents, setCalendarEvents] = useState([])
+  const [calMonth, setCalMonth] = useState(new Date())
   const [showSettings, setShowSettings] = useState(false)
   const canvasRef = useRef(null)
   const audioRef = useRef(null)
@@ -215,6 +218,13 @@ function App() {
     }
   }
 
+  const loadCalendar = async () => {
+    try {
+      const res = await axios.get(`${API}/calendar/events`)
+      setCalendarEvents(res.data.events || [])
+    } catch(e) { setCalendarEvents([]) }
+  }
+
   const connectGmail = () => {
     fetch(`${API}/auth/google`).then(r=>r.json()).then(d=>window.open(d.auth_url,'_self'))
   }
@@ -263,6 +273,55 @@ function App() {
 
   return (
     <div style={{height:"100vh", background:"#00040e", fontFamily:"'Courier New',monospace", color:"#fff", overflow:"hidden", position:"relative", display:"flex", flexDirection:"column"}}>
+      {showCalendar && (
+        <div onClick={() => setShowCalendar(false)} style={{position:'fixed',top:0,left:0,width:'100%',height:'100%',background:'rgba(0,0,0,0.8)',zIndex:100,display:'flex',alignItems:'center',justifyContent:'center'}}>
+          <div onClick={e=>e.stopPropagation()} style={{background:'#00081a',border:'1px solid rgba(180,220,255,0.3)',borderRadius:'20px',padding:'20px',width:'340px',maxHeight:'80vh',overflowY:'auto',fontFamily:'Courier New'}}>
+            <div style={{display:'flex',justifyContent:'space-between',alignItems:'center',marginBottom:'15px'}}>
+              <button onClick={()=>setCalMonth(new Date(calMonth.getFullYear(),calMonth.getMonth()-1,1))} style={{background:'none',border:'none',color:'#fff',fontSize:'18px',cursor:'pointer'}}>◀</button>
+              <div style={{fontSize:'12px',letterSpacing:'3px',color:'#fff'}}>{calMonth.toLocaleDateString('de-DE',{month:'long',year:'numeric'}).toUpperCase()}</div>
+              <button onClick={()=>setCalMonth(new Date(calMonth.getFullYear(),calMonth.getMonth()+1,1))} style={{background:'none',border:'none',color:'#fff',fontSize:'18px',cursor:'pointer'}}>▶</button>
+            </div>
+            <div style={{display:'grid',gridTemplateColumns:'repeat(7,1fr)',gap:'2px',marginBottom:'8px'}}>
+              {['Mo','Di','Mi','Do','Fr','Sa','So'].map(d=>(
+                <div key={d} style={{textAlign:'center',fontSize:'9px',color:'rgba(150,200,255,0.6)',padding:'4px'}}>{d}</div>
+              ))}
+            </div>
+            <div style={{display:'grid',gridTemplateColumns:'repeat(7,1fr)',gap:'2px'}}>
+              {(() => {
+                const year = calMonth.getFullYear()
+                const month = calMonth.getMonth()
+                const firstDay = new Date(year,month,1).getDay()
+                const offset = firstDay === 0 ? 6 : firstDay - 1
+                const daysInMonth = new Date(year,month+1,0).getDate()
+                const cells = []
+                for(let i=0;i<offset;i++) cells.push(<div key={'e'+i}/>)
+                for(let d=1;d<=daysInMonth;d++){
+                  const dateStr = `${year}-${String(month+1).padStart(2,'0')}-${String(d).padStart(2,'0')}`
+                  const hasEvent = calendarEvents.some(e=>e.start&&e.start.startsWith(dateStr))
+                  const isToday = new Date().toISOString().startsWith(dateStr)
+                  cells.push(
+                    <div key={d} style={{textAlign:'center',padding:'5px 2px',fontSize:'11px',borderRadius:'6px',background:isToday?'rgba(150,200,255,0.3)':hasEvent?'rgba(100,255,150,0.15)':'transparent',color:isToday?'#fff':hasEvent?'rgba(100,255,150,0.9)':'rgba(200,230,255,0.7)',border:isToday?'1px solid rgba(150,200,255,0.5)':'1px solid transparent',cursor:'pointer'}}>
+                      {d}{hasEvent&&<div style={{width:'4px',height:'4px',background:'rgba(100,255,150,0.8)',borderRadius:'50%',margin:'0 auto'}}/>}
+                    </div>
+                  )
+                }
+                return cells
+              })()}
+            </div>
+            <div style={{marginTop:'15px',borderTop:'1px solid rgba(180,220,255,0.2)',paddingTop:'10px'}}>
+              <div style={{fontSize:'10px',letterSpacing:'2px',color:'rgba(150,200,255,0.6)',marginBottom:'8px'}}>TERMINE DIESEN MONAT</div>
+              {calendarEvents.length === 0 ? (
+                <div style={{fontSize:'11px',color:'rgba(200,230,255,0.4)'}}>Keine Termine</div>
+              ) : calendarEvents.map((e,i)=>(
+                <div key={i} style={{fontSize:'11px',padding:'5px 0',borderBottom:'1px solid rgba(180,220,255,0.1)',color:'rgba(200,230,255,0.8)'}}>
+                  <span style={{color:'rgba(100,255,150,0.7)'}}>{e.start&&e.start.substring(8,10)+'.'+e.start.substring(5,7)}</span> {e.title}
+                </div>
+              ))}
+            </div>
+            <button onClick={()=>setShowCalendar(false)} style={{marginTop:'15px',width:'100%',padding:'8px',background:'rgba(150,200,255,0.1)',border:'1px solid rgba(180,220,255,0.3)',color:'#fff',borderRadius:'10px',cursor:'pointer',fontFamily:'Courier New',fontSize:'11px',letterSpacing:'2px'}}>SCHLIESSEN</button>
+          </div>
+        </div>
+      )}
       {showSettings && (
         <div onClick={() => setShowSettings(false)} style={{position:"fixed",top:0,left:0,width:"100%",height:"100%",background:"rgba(0,0,0,0.7)",zIndex:100,display:"flex",alignItems:"center",justifyContent:"center"}}>
           <div onClick={e => e.stopPropagation()} style={{background:"#00081a",border:"1px solid rgba(180,220,255,0.3)",borderRadius:"20px",padding:"30px",minWidth:"300px",fontFamily:"Courier New"}}>
@@ -336,7 +395,7 @@ function App() {
         <div style={{display:"flex",gap:"8px",justifyContent:"center",flexWrap:"wrap",alignItems:"center",flexShrink:0}}>
           <button onClick={connectGmail} style={btnStyle("green")}>{gmailConnected?"✓ GMAIL":"GMAIL"}</button>
           <button style={btnStyle("blue")}>MEMORY</button>
-          <button style={btnStyle("purple")}>KALENDER</button>
+          <button onClick={() => { setShowCalendar(true); loadCalendar() }} style={btnStyle("purple")}>KALENDER</button>
           <button onClick={() => setShowSettings(true)} style={btnStyle("blue")}>SETTINGS</button>
           <button onClick={startListening} style={{width:"48px",height:"48px",borderRadius:"50%",border:"2px solid rgba(200,230,255,0.55)",background:listening?"rgba(244,114,182,0.2)":"rgba(150,200,255,0.1)",color:"#fff",fontSize:"20px",cursor:"pointer",display:"flex",alignItems:"center",justifyContent:"center"}}>🎙</button>
         </div>
