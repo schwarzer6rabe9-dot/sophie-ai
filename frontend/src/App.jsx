@@ -205,6 +205,17 @@ function App() {
   }
 
   const handleStart = async () => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        pos => {
+          axios.post(`${API}/location`, {
+            lat: pos.coords.latitude,
+            lon: pos.coords.longitude
+          }).catch(()=>{})
+        },
+        () => {}
+      )
+    }
     setStarted(true)
     try {
       const res = await axios.get(`${API}/briefing`)

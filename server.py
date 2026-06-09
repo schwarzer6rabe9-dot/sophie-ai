@@ -112,7 +112,12 @@ def briefing():
         time_str = now.strftime('%H:%M Uhr')
         weather_text = ''
         try:
-            w = requests.get('https://wttr.in/Riffenmatt?format=%t+%C&m&lang=de', timeout=5)
+            memory_loc = load_memory().get('location')
+            if memory_loc:
+                loc = f"{memory_loc['lat']},{memory_loc['lon']}"
+            else:
+                loc = 'Riffenmatt'
+            w = requests.get(f'https://wttr.in/{loc}?format=%t+%C&m&lang=de', timeout=5)
             if w.status_code == 200:
                 weather_text = f'Das Wetter in Riffenmatt: {w.text.strip()}.'
         except:
