@@ -13,6 +13,7 @@ function App() {
   const [time, setTime] = useState(new Date())
   const [memSaved, setMemSaved] = useState(false)
   const [gmailConnected, setGmailConnected] = useState(false)
+  const [showSettings, setShowSettings] = useState(false)
   const canvasRef = useRef(null)
   const audioRef = useRef(null)
   const recognitionRef = useRef(null)
@@ -248,8 +249,44 @@ function App() {
     )
   }
 
+  const costs = [
+    { label: "Claude Pro", amount: "CHF 20.00" },
+    { label: "Anthropic API", amount: "CHF 15.00" },
+    { label: "ElevenLabs Creator", amount: "CHF 22.00" },
+    { label: "n8n Cloud", amount: "CHF 24.00" },
+    { label: "HeyGen", amount: "CHF 29.00" },
+    { label: "Render", amount: "CHF 0.00" },
+    { label: "JSONBin", amount: "CHF 0.00" },
+  ]
+  const totalMonthly = 110
+  const totalYearly = totalMonthly * 12
+
   return (
     <div style={{height:"100vh", background:"#00040e", fontFamily:"'Courier New',monospace", color:"#fff", overflow:"hidden", position:"relative", display:"flex", flexDirection:"column"}}>
+      {showSettings && (
+        <div onClick={() => setShowSettings(false)} style={{position:"fixed",top:0,left:0,width:"100%",height:"100%",background:"rgba(0,0,0,0.7)",zIndex:100,display:"flex",alignItems:"center",justifyContent:"center"}}>
+          <div onClick={e => e.stopPropagation()} style={{background:"#00081a",border:"1px solid rgba(180,220,255,0.3)",borderRadius:"20px",padding:"30px",minWidth:"300px",fontFamily:"Courier New"}}>
+            <div style={{fontSize:"13px",letterSpacing:"4px",color:"#fff",marginBottom:"20px",textAlign:"center"}}>💰 KOSTEN DASHBOARD</div>
+            {costs.map((item, i) => (
+              <div key={i} style={{display:"flex",justifyContent:"space-between",padding:"8px 0",borderBottom:"1px solid rgba(180,220,255,0.1)",fontSize:"12px"}}>
+                <span style={{color:"rgba(200,230,255,0.7)"}}>{item.label}</span>
+                <span style={{color: item.amount === "CHF 0.00" ? "rgba(0,255,150,0.8)" : "rgba(180,220,255,0.9)",fontWeight:"bold"}}>{item.amount}</span>
+              </div>
+            ))}
+            <div style={{marginTop:"15px",padding:"10px 0",borderTop:"1px solid rgba(180,220,255,0.3)"}}>
+              <div style={{display:"flex",justifyContent:"space-between",fontSize:"13px",fontWeight:"bold"}}>
+                <span style={{color:"#fff"}}>TOTAL / MONAT</span>
+                <span style={{color:"rgba(255,200,100,0.9)"}}>CHF {totalMonthly}.00</span>
+              </div>
+              <div style={{display:"flex",justifyContent:"space-between",fontSize:"11px",marginTop:"6px"}}>
+                <span style={{color:"rgba(200,230,255,0.5)"}}>TOTAL / JAHR</span>
+                <span style={{color:"rgba(255,180,80,0.7)"}}>CHF {totalYearly}.00</span>
+              </div>
+            </div>
+            <button onClick={() => setShowSettings(false)} style={{marginTop:"20px",width:"100%",padding:"10px",background:"rgba(150,200,255,0.1)",border:"1px solid rgba(180,220,255,0.3)",color:"#fff",borderRadius:"10px",cursor:"pointer",fontFamily:"Courier New",letterSpacing:"2px",fontSize:"11px"}}>SCHLIESSEN</button>
+          </div>
+        </div>
+      )}
       <canvas ref={canvasRef} style={{position:"absolute",top:0,left:0,width:"100%",height:"100%"}}/>
       <style>{`@keyframes orbit{from{transform:rotate(0deg)}to{transform:rotate(360deg)}} @keyframes corepulse{0%,100%{box-shadow:0 0 20px rgba(150,200,255,0.3)}50%{box-shadow:0 0 45px rgba(150,200,255,0.6)}} ::-webkit-scrollbar{width:3px} ::-webkit-scrollbar-thumb{background:rgba(150,200,255,0.2)}`}</style>
 
@@ -300,7 +337,7 @@ function App() {
           <button onClick={connectGmail} style={btnStyle("green")}>{gmailConnected?"✓ GMAIL":"GMAIL"}</button>
           <button style={btnStyle("blue")}>MEMORY</button>
           <button style={btnStyle("purple")}>KALENDER</button>
-          <button style={btnStyle("blue")}>SETTINGS</button>
+          <button onClick={() => setShowSettings(true)} style={btnStyle("blue")}>SETTINGS</button>
           <button onClick={startListening} style={{width:"48px",height:"48px",borderRadius:"50%",border:"2px solid rgba(200,230,255,0.55)",background:listening?"rgba(244,114,182,0.2)":"rgba(150,200,255,0.1)",color:"#fff",fontSize:"20px",cursor:"pointer",display:"flex",alignItems:"center",justifyContent:"center"}}>🎙</button>
         </div>
 
