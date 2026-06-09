@@ -12,6 +12,7 @@ function App() {
   const [started, setStarted] = useState(false)
   const [time, setTime] = useState(new Date())
   const [memSaved, setMemSaved] = useState(false)
+  const [voiceInput, setVoiceInput] = useState(false)
   const [gmailConnected, setGmailConnected] = useState(false)
   const [showCalendar, setShowCalendar] = useState(false)
   const [calendarEvents, setCalendarEvents] = useState([])
@@ -170,7 +171,7 @@ function App() {
           const n8nRes = await axios.post(`${API}/n8n`, { message: msg })
           const reply = n8nRes.data.ok ? "Erledigt! Workflow gestartet." : "Fehler: " + (n8nRes.data.error || "")
           setMessages([...newMessages, { role: "assistant", text: reply }])
-          await speak(reply)
+          if (voiceInput) { await speak(reply) } setVoiceInput(false)
         } catch (e) {
           setMessages([...newMessages, { role: "assistant", text: "n8n Verbindungsfehler." }])
         }
@@ -199,7 +200,7 @@ function App() {
     const r = new SR()
     r.lang = "de-DE"; r.continuous = false; r.interimResults = false
     r.onstart = () => setListening(true)
-    r.onresult = (e) => { setListening(false); sendMessage(e.results[0][0].transcript) }
+    r.onresult = (e) => { setListening(false); setVoiceInput(true); sendMessage(e.results[0][0].transcript) }
     r.onerror = () => setListening(false)
     r.onend = () => setListening(false)
     recognitionRef.current = r; r.start()
