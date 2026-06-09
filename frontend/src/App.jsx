@@ -158,7 +158,18 @@ function App() {
     setLoading(true)
     try {
       const lower = msg.toLowerCase()
-      if (lower.includes("email") || lower.includes("mail") || lower.includes("postfach")) {
+      const n8nKeywords = ["tiktok", "video erstellen", "post erstellen", "automatisier", "n8n", "aufgabe", "erinnerung"]
+      const isN8nCommand = n8nKeywords.some(k => lower.includes(k))
+      if (isN8nCommand) {
+        try {
+          const n8nRes = await axios.post(`${API}/n8n`, { message: msg })
+          const reply = n8nRes.data.ok ? "Erledigt! Workflow gestartet." : "Fehler: " + (n8nRes.data.error || "")
+          setMessages([...newMessages, { role: "assistant", text: reply }])
+          await speak(reply)
+        } catch (e) {
+          setMessages([...newMessages, { role: "assistant", text: "n8n Verbindungsfehler." }])
+        }
+      } else if (lower.includes("email") || lower.includes("mail") || lower.includes("postfach")) {
         const emailInfo = await checkGmail()
         const response = await axios.post(`${API}/chat`, { message: `Nutzer fragt nach Emails: ${emailInfo}. Antworte auf Deutsch freundlich.` })
         const reply = response.data.reply
