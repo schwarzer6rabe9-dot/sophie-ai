@@ -220,6 +220,20 @@ def debug_routes():
     rules = [str(r) for r in app.url_map.iter_rules()]
     return jsonify({"routes": rules, "total": len(rules)})
 
+
+@app.route("/n8n", methods=["POST"])
+def n8n_webhook():
+    try:
+        data = request.json
+        message = data.get("message", "")
+        n8n_url = "https://meister6.app.n8n.cloud/webhook/25492b6e-fbb9-457c-828c-64c96fdb1faa"
+        response = requests.post(n8n_url, json={"message": message}, timeout=10)
+        if response.status_code == 200:
+            return jsonify({"ok": True, "result": response.json()})
+        return jsonify({"error": "n8n Fehler"}), 500
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5001))
     app.run(debug=False, host='0.0.0.0', port=port)
