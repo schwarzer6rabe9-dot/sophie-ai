@@ -116,9 +116,12 @@ def chat():
     memory = load_memory()
     facts = memory.get('facts', [])
     recent = memory.get('recent', [])[-5:]
-    system_prompt = f"""Du bist Sophie, eine freundliche, intelligente KI-Assistentin. Du sprichst Deutsch und bist warm, empathisch und hilfsbereit.
+    summaries = memory.get('summaries', [])[-7:]
+    summary_text = ' | '.join([s['date']+': '+s['summary'] for s in summaries]) if summaries else 'Keine.'
+    system_prompt = f"""Du bist Sophie, eine freundliche, intelligente KI-Assistentin von Antonio. Du sprichst Deutsch und bist warm, empathisch und hilfsbereit.
 Aktuelle Zeit: {datetime.now(timezone('Europe/Zurich')).strftime('%H:%M Uhr, %d.%m.%Y')}
 Was du weisst: {'; '.join(facts) if facts else 'Noch nichts gespeichert.'}
+Zusammenfassungen letzte 7 Tage: {summary_text}
 Letzte Gespraeche: {'; '.join(recent) if recent else 'Keine.'}"""
     response = anthropic_client.messages.create(model="claude-sonnet-4-6",max_tokens=500,system=system_prompt,messages=[{"role": "user", "content": user_message}])
     reply = response.content[0].text
@@ -149,9 +152,47 @@ def memory_add():
     memory = load_memory()
     if 'facts' not in memory:
         memory['facts'] = []
-    memory['facts'].append(fact)
+    if fact not in memory['facts']:
+        memory['facts'].append(fact)
+    memory['facts'] = memory['facts'][-50:]
     save_memory(memory)
     return jsonify({"ok": True})
+
+@app.route('/memory/summary', methods=['POST'])
+def memory_summary():
+    try:
+        memory = load_memory()
+        recent = memory.get('recent', [])
+        if not recent:
+            return jsonify({"ok": False, "msg": "Nichts zu zusammenfassen"})
+        summaries = memory.get('summaries', [])
+        today = datetime.now(timezone('Europe/Zurich')).strftime('%d.%m.%Y')
+        already = any(s.get('date') == today for s in summaries)
+        if already:
+            return jsonify({"ok": False, "msg": "Heute schon zusammengefasst"})
+        response = anthropic_client.messages.create(
+            model="claude-sonnet-4-6",
+            max_tokens=300,
+            system="Fasse die folgenden Gespraeche in 3-5 Saetzen auf Deutsch zusammen. Nur die wichtigsten Infos behalten.",
+            messages=[{"role": "user", "content": str(recent)}]
+        )
+        summary_text = response.content[0].text
+        summaries.append({"date": today, "summary": summary_text})
+        memory['summaries'] = summaries[-30:]
+        memory['recent'] = []
+        save_memory(memory)
+        return jsonify({"ok": True, "summary": summary_text})
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+@app.route('/memory/view', methods=['GET'])
+def memory_view():
+    memory = load_memory()
+    return jsonify({
+        "facts": memory.get('facts', []),
+        "summaries": memory.get('summaries', []),
+        "recent_count": len(memory.get('recent', []))
+    })
 
 @app.route('/auth/google')
 def auth_google():
