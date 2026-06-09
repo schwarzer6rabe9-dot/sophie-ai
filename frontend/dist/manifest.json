@@ -1,0 +1,17 @@
+{
+  "name": "Sophie AI",
+  "short_name": "Sophie",
+  "description": "Sophie - Deine persönliche KI-Assistentin",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#00040e",
+  "theme_color": "#00040e",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
