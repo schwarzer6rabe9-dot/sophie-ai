@@ -164,7 +164,7 @@ function App() {
     setLoading(true)
     try {
       const lower = msg.toLowerCase()
-      const n8nKeywords = ["tiktok", "video erstellen", "post erstellen", "automatisier", "n8n", "aufgabe", "erinnerung"]
+      const n8nKeywords = ["tiktok video erstellen", "post erstellen", "n8n starten", "workflow starten"]
       const isN8nCommand = n8nKeywords.some(k => lower.includes(k))
       if (isN8nCommand) {
         try {
