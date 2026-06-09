@@ -17,6 +17,7 @@ function App() {
   const [calendarEvents, setCalendarEvents] = useState([])
   const [calMonth, setCalMonth] = useState(new Date())
   const [showSettings, setShowSettings] = useState(false)
+  const [elUsage, setElUsage] = useState(null)
   const canvasRef = useRef(null)
   const audioRef = useRef(null)
   const recognitionRef = useRef(null)
@@ -353,6 +354,23 @@ function App() {
                 <span style={{color:"rgba(255,180,80,0.7)"}}>CHF {totalYearly}.00</span>
               </div>
             </div>
+            {elUsage && (
+              <div style={{marginTop:'15px',padding:'10px',background:'rgba(150,200,255,0.05)',borderRadius:'10px',border:'1px solid rgba(180,220,255,0.2)'}}>
+                <div style={{fontSize:'10px',letterSpacing:'2px',color:'rgba(150,200,255,0.6)',marginBottom:'8px'}}>🎙 ELEVENLABS GUTHABEN</div>
+                <div style={{display:'flex',justifyContent:'space-between',fontSize:'11px',marginBottom:'5px'}}>
+                  <span style={{color:'rgba(200,230,255,0.7)'}}>Verbraucht</span>
+                  <span style={{color:'rgba(255,180,80,0.9)'}}>{elUsage.used.toLocaleString()} Zeichen</span>
+                </div>
+                <div style={{display:'flex',justifyContent:'space-between',fontSize:'11px',marginBottom:'8px'}}>
+                  <span style={{color:'rgba(200,230,255,0.7)'}}>Verbleibend</span>
+                  <span style={{color:'rgba(100,255,150,0.9)'}}>{elUsage.remaining.toLocaleString()} Zeichen</span>
+                </div>
+                <div style={{background:'rgba(0,0,0,0.3)',borderRadius:'10px',height:'8px',overflow:'hidden'}}>
+                  <div style={{width:elUsage.percent+'%',height:'100%',background:'linear-gradient(90deg,rgba(100,255,150,0.8),rgba(150,200,255,0.8))',borderRadius:'10px'}}/>
+                </div>
+                <div style={{textAlign:'right',fontSize:'10px',color:'rgba(200,230,255,0.5)',marginTop:'4px'}}>{elUsage.percent}% verbleibend</div>
+              </div>
+            )}
             <button onClick={() => setShowSettings(false)} style={{marginTop:"20px",width:"100%",padding:"10px",background:"rgba(150,200,255,0.1)",border:"1px solid rgba(180,220,255,0.3)",color:"#fff",borderRadius:"10px",cursor:"pointer",fontFamily:"Courier New",letterSpacing:"2px",fontSize:"11px"}}>SCHLIESSEN</button>
           </div>
         </div>
@@ -407,7 +425,10 @@ function App() {
           <button onClick={connectGmail} style={btnStyle("green")}>{gmailConnected?"✓ GMAIL":"GMAIL"}</button>
           <button style={btnStyle("blue")}>MEMORY</button>
           <button onClick={() => { setShowCalendar(true); loadCalendar() }} style={btnStyle("purple")}>KALENDER</button>
-          <button onClick={() => setShowSettings(true)} style={btnStyle("blue")}>SETTINGS</button>
+          <button onClick={async () => { 
+            setShowSettings(true)
+            try { const r = await axios.get(`${API}/elevenlabs/usage`); setElUsage(r.data) } catch(e) {}
+          }} style={btnStyle("blue")}>SETTINGS</button>
           <button onClick={startListening} style={{width:"48px",height:"48px",borderRadius:"50%",border:"2px solid rgba(200,230,255,0.55)",background:listening?"rgba(244,114,182,0.2)":"rgba(150,200,255,0.1)",color:"#fff",fontSize:"20px",cursor:"pointer",display:"flex",alignItems:"center",justifyContent:"center"}}>🎙</button>
         </div>
 
