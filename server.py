@@ -112,7 +112,7 @@ def briefing():
         time_str = now.strftime('%H:%M Uhr')
         weather_text = ''
         try:
-            w = requests.get('https://wttr.in/Riffenmatt?format=%t+%C&lang=de', timeout=5)
+            w = requests.get('https://wttr.in/Riffenmatt?format=%t+%C&m&lang=de', timeout=5)
             if w.status_code == 200:
                 weather_text = f'Das Wetter in Riffenmatt: {w.text.strip()}.'
         except:
