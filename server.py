@@ -155,7 +155,7 @@ Aktuelle Zeit: {datetime.now(timezone('Europe/Zurich')).strftime('%H:%M Uhr, %d.
 Was du weisst: {'; '.join(facts) if facts else 'Noch nichts gespeichert.'}
 Zusammenfassungen letzte 7 Tage: {summary_text}
 Letzte Gespraeche: {'; '.join(recent) if recent else 'Keine.'}"""
-    response = anthropic_client.messages.create(model="claude-sonnet-4-6",max_tokens=500,system=system_prompt,messages=[{"role": "user", "content": user_message}])
+    response = anthropic_client.messages.create(model="claude-sonnet-4-6",max_tokens=300,system=system_prompt,messages=[{"role": "user", "content": user_message}])
     reply = response.content[0].text
     recent.append(f"User: {user_message} | Sophie: {reply[:50]}")
     memory['recent'] = recent[-10:]
