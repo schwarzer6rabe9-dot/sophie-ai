@@ -185,7 +185,7 @@ function App() {
         const response = await axios.post(`${API}/chat`, { message: msg })
         const reply = response.data.reply
         setMessages([...newMessages, { role: "assistant", text: reply }])
-        if (listening) await speak(reply)
+        await speak(reply)
       }
     } catch (e) {
       setMessages([...newMessages, { role: "assistant", text: "Fehler: " + e.message }])
