@@ -32,6 +32,38 @@ SCOPES = ["https://www.googleapis.com/auth/gmail.readonly","https://www.googleap
 
 anthropic_client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
 
+import threading
+import time as time_module
+
+def auto_summary_job():
+    while True:
+        try:
+            now = datetime.now(timezone('Europe/Zurich'))
+            if now.hour == 22 and now.minute == 0:
+                memory = load_memory()
+                recent = memory.get('recent', [])
+                today = now.strftime('%d.%m.%Y')
+                already = any(s.get('date') == today for s in memory.get('summaries', []))
+                if recent and not already:
+                    response = anthropic_client.messages.create(
+                        model='claude-sonnet-4-6',
+                        max_tokens=300,
+                        system='Fasse die folgenden Gespraeche in 3-5 Saetzen auf Deutsch zusammen. Nur die wichtigsten Infos behalten.',
+                        messages=[{'role': 'user', 'content': str(recent)}]
+                    )
+                    summary_text = response.content[0].text
+                    summaries = memory.get('summaries', [])
+                    summaries.append({'date': today, 'summary': summary_text})
+                    memory['summaries'] = summaries[-30:]
+                    memory['recent'] = []
+                    save_memory(memory)
+            time_module.sleep(60)
+        except:
+            time_module.sleep(60)
+
+summary_thread = threading.Thread(target=auto_summary_job, daemon=True)
+summary_thread.start()
+
 def load_memory():
     if JSONBIN_BIN and JSONBIN_KEY:
         try:
