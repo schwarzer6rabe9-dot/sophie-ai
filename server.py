@@ -337,11 +337,16 @@ def n8n_webhook():
         data = request.json
         message = data.get("message", "")
         n8n_url = "https://meister6.app.n8n.cloud/webhook/12d2278a-f586-477d-95f6-fd126747c042"
-        response = requests.post(n8n_url, json={"message": message}, timeout=10)
-        if response.status_code == 200:
-            return jsonify({"ok": True, "result": response.json()})
-        return jsonify({"error": "n8n Fehler"}), 500
+        response = requests.post(n8n_url, json={"message": message, "trigger": "sophie"}, timeout=10)
+        print(f"[N8N] Status: {response.status_code}, Body: {response.text[:100]}", flush=True)
+        if response.status_code in [200, 201]:
+            try:
+                return jsonify({"ok": True, "result": response.json()})
+            except:
+                return jsonify({"ok": True, "result": response.text})
+        return jsonify({"error": f"n8n status {response.status_code}"}), 500
     except Exception as e:
+        print(f"[N8N] Error: {e}", flush=True)
         return jsonify({"error": str(e)}), 500
 
 if __name__ == '__main__':
