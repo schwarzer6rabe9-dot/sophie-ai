@@ -195,6 +195,25 @@ def tts():
         return send_file(audio_path, mimetype='audio/mpeg')
     return jsonify({"error": "TTS failed"}), 500
 
+
+@app.route('/elevenlabs/usage', methods=['GET'])
+def elevenlabs_usage():
+    try:
+        if not ELEVENLABS_API_KEY:
+            return jsonify({'error': 'No API key'}), 400
+        r = requests.get('https://api.elevenlabs.io/v1/user/subscription',
+            headers={'xi-api-key': ELEVENLABS_API_KEY}, timeout=5)
+        if r.status_code == 200:
+            data = r.json()
+            used = data.get('character_count', 0)
+            limit = data.get('character_limit', 100000)
+            remaining = limit - used
+            percent = round((used / limit) * 100, 1) if limit > 0 else 0
+            return jsonify({'used': used, 'limit': limit, 'remaining': remaining, 'percent': percent})
+        return jsonify({'error': f'ElevenLabs API error: {r.status_code}'}), 400
+    except Exception as e:
+        return jsonify({'error': str(e)}), 500
+
 @app.route('/memory/add', methods=['POST'])
 def memory_add():
     data = request.json
