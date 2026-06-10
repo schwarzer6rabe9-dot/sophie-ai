@@ -36,10 +36,12 @@ import threading
 import time as time_module
 
 def auto_summary_job():
+    last_save_hour = -1
     while True:
         try:
             now = datetime.now(timezone('Europe/Zurich'))
-            if now.hour == 22 and now.minute == 0:
+            current_hour = now.hour
+            if current_hour == 22 and now.minute == 0:
                 memory = load_memory()
                 recent = memory.get('recent', [])
                 today = now.strftime('%d.%m.%Y')
@@ -49,29 +51,39 @@ def auto_summary_job():
                         model='claude-sonnet-4-6',
                         max_tokens=300,
                         system='Fasse die folgenden Gespraeche in 3-5 Saetzen auf Deutsch zusammen. Nur die wichtigsten Infos behalten.',
-                        messages=[{'role': 'user', 'content': str(recent)}]
-                    )
+                        messages=[{'role': 'user', 'content': str(recent)}])
                     summary_text = response.content[0].text
                     summaries = memory.get('summaries', [])
                     summaries.append({'date': today, 'summary': summary_text})
                     memory['summaries'] = summaries[-30:]
                     memory['recent'] = []
                     save_memory(memory)
+                    print('[MEMORY] Auto-summary saved',flush=True)
+            if current_hour % 4 == 2 and now.minute == 0 and current_hour != last_save_hour:
+                last_save_hour = current_hour
+                memory = load_memory()
+                if memory:
+                    save_memory(memory)
+                    print(f'[MEMORY] Auto-save at {current_hour}:00',flush=True)
             time_module.sleep(60)
-        except:
+        except Exception as e:
+            print(f'[MEMORY] Job error: {e}',flush=True)
             time_module.sleep(60)
-
 summary_thread = threading.Thread(target=auto_summary_job, daemon=True)
 summary_thread.start()
 
 def load_memory():
     if JSONBIN_BIN and JSONBIN_KEY:
         try:
-            r = requests.get(f"https://api.jsonbin.io/v3/b/{JSONBIN_BIN}/latest",headers={"X-Master-Key": JSONBIN_KEY})
+            r = requests.get(f"https://api.jsonbin.io/v3/b/{JSONBIN_BIN}/latest",headers={"X-Master-Key": JSONBIN_KEY},timeout=5)
             if r.status_code == 200:
-                return r.json().get("record", {})
-        except:
-            pass
+                data = r.json().get("record", {})
+                print(f"[MEMORY] Loaded: {len(data.get('recent',[]))} recent, {len(data.get('facts',[]))} facts",flush=True)
+                return data
+            else:
+                print(f"[MEMORY] JSONBin load error: {r.status_code}",flush=True)
+        except Exception as e:
+            print(f"[MEMORY] JSONBin load failed: {e}",flush=True)
     if os.path.exists(MEMORY_FILE):
         with open(MEMORY_FILE, 'r') as f:
             return json.load(f)
@@ -80,9 +92,10 @@ def load_memory():
 def save_memory(memory):
     if JSONBIN_BIN and JSONBIN_KEY:
         try:
-            requests.put(f"https://api.jsonbin.io/v3/b/{JSONBIN_BIN}",json=memory,headers={"X-Master-Key": JSONBIN_KEY,"Content-Type": "application/json"})
-        except:
-            pass
+            r = requests.put(f"https://api.jsonbin.io/v3/b/{JSONBIN_BIN}",json=memory,headers={"X-Master-Key": JSONBIN_KEY,"Content-Type": "application/json"},timeout=5)
+            print(f"[MEMORY] Saved to JSONBin: {r.status_code}",flush=True)
+        except Exception as e:
+            print(f"[MEMORY] JSONBin save failed: {e}",flush=True)
     with open(MEMORY_FILE, 'w') as f:
         json.dump(memory, f, indent=2)
 
