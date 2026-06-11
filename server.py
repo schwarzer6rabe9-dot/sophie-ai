@@ -336,7 +336,7 @@ def n8n_webhook():
     try:
         data = request.json
         message = data.get("message", "")
-        n8n_url = "https://meister6.app.n8n.cloud/webhook/870000e0-882a-4073-b2c1-434f7d1e95e6"
+        n8n_url = "https://meister6.app.n8n.cloud/webhook/83051210-d1ca-4baf-9b2b-c3af277847bf"
         response = requests.post(n8n_url, json={"message": message, "trigger": "sophie"}, timeout=10)
         print(f"[N8N] Status: {response.status_code}, Body: {response.text[:100]}", flush=True)
         if response.status_code in [200, 201]:
