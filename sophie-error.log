@@ -1,0 +1,878 @@
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/google/oauth2/__init__.py:40: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/google/auth/__init__.py:54: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/google/api_core/_python_version_support.py:242: FutureWarning: You are using a non-supported Python version (3.9.6). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.10, and then update google.api_core.
+  warnings.warn(message, FutureWarning)
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.1.110:5001
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [12/Jun/2026 21:39:41] "GET / HTTP/1.1" 200 -
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/google/oauth2/__init__.py:40: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/google/auth/__init__.py:54: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/google/api_core/_python_version_support.py:242: FutureWarning: You are using a non-supported Python version (3.9.6). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.10, and then update google.api_core.
+  warnings.warn(message, FutureWarning)
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.1.110:5001
+[33mPress CTRL+C to quit[0m
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/google/oauth2/__init__.py:40: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/google/auth/__init__.py:54: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/google/api_core/_python_version_support.py:242: FutureWarning: You are using a non-supported Python version (3.9.6). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.10, and then update google.api_core.
+  warnings.warn(message, FutureWarning)
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.1.110:5001
+[33mPress CTRL+C to quit[0m
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/google/oauth2/__init__.py:40: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/google/auth/__init__.py:54: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/google/api_core/_python_version_support.py:242: FutureWarning: You are using a non-supported Python version (3.9.6). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.10, and then update google.api_core.
+  warnings.warn(message, FutureWarning)
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.1.110:5001
+[33mPress CTRL+C to quit[0m
+192.168.1.110 - - [12/Jun/2026 22:25:57] "GET /?v=2 HTTP/1.1" 200 -
+192.168.1.110 - - [12/Jun/2026 22:25:57] "GET /manifest.json HTTP/1.1" 200 -
+192.168.1.110 - - [12/Jun/2026 22:25:57] "GET /assets/index-Eo2ueqkt.js HTTP/1.1" 200 -
+192.168.1.110 - - [12/Jun/2026 22:25:57] "GET /assets/index-BesNU1K4.css HTTP/1.1" 200 -
+192.168.1.110 - - [12/Jun/2026 22:25:57] "GET /favicon.svg HTTP/1.1" 200 -
+192.168.1.110 - - [12/Jun/2026 22:26:03] "GET /briefing HTTP/1.1" 200 -
+192.168.1.110 - - [12/Jun/2026 22:26:03] "GET /gmail/unread HTTP/1.1" 200 -
+192.168.1.110 - - [12/Jun/2026 22:26:06] "POST /tts HTTP/1.1" 200 -
+192.168.1.110 - - [12/Jun/2026 22:26:31] "POST /n8n HTTP/1.1" 200 -
+192.168.1.110 - - [12/Jun/2026 22:59:17] "GET /?v=2 HTTP/1.1" 200 -
+192.168.1.110 - - [12/Jun/2026 22:59:18] "GET /favicon.svg HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2026 00:04:44] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2026 00:04:44] "GET /manifest.json HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2026 00:04:44] "GET /assets/index-BesNU1K4.css HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2026 00:04:44] "GET /assets/index-Eo2ueqkt.js HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2026 00:04:44] "GET /favicon.svg HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2026 00:04:58] "[36mGET /favicon.svg HTTP/1.1[0m" 304 -
+127.0.0.1 - - [13/Jun/2026 00:04:58] "[33mGET /apple-touch-icon.png HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Jun/2026 00:04:58] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Jun/2026 00:04:58] "[33mGET /apple-touch-icon-precomposed.png HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Jun/2026 00:05:02] "GET /favicon.svg HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2026 00:05:03] "[36mGET /favicon.svg HTTP/1.1[0m" 304 -
+127.0.0.1 - - [13/Jun/2026 00:05:03] "[33mGET /apple-touch-icon-120x120-precomposed.png HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Jun/2026 00:05:03] "[33mGET /apple-touch-icon-120x120.png HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Jun/2026 00:05:03] "[33mGET /apple-touch-icon.png HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Jun/2026 00:05:13] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2026 00:05:14] "[36mGET /assets/index-BesNU1K4.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [13/Jun/2026 00:05:14] "[36mGET /assets/index-Eo2ueqkt.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [13/Jun/2026 00:05:14] "GET /manifest.json HTTP/1.1" 200 -
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/google/oauth2/__init__.py:40: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/google/auth/__init__.py:54: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/google/api_core/_python_version_support.py:242: FutureWarning: You are using a non-supported Python version (3.9.6). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.10, and then update google.api_core.
+  warnings.warn(message, FutureWarning)
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.1.110:5001
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [13/Jun/2026 00:10:47] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2026 00:10:47] "[33mGET /apple-touch-icon-precomposed.png HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Jun/2026 00:10:47] "[33mGET /apple-touch-icon.png HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Jun/2026 00:10:47] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Jun/2026 00:10:48] "GET /favicon.svg HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2026 00:11:51] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2026 00:11:51] "GET /manifest.json HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2026 00:11:51] "GET /assets/index-BEYstNpb.js HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2026 00:11:54] "[36mGET / HTTP/1.1[0m" 304 -
+127.0.0.1 - - [13/Jun/2026 00:11:55] "[36mGET /manifest.json HTTP/1.1[0m" 304 -
+127.0.0.1 - - [13/Jun/2026 00:11:56] "[36mGET / HTTP/1.1[0m" 304 -
+127.0.0.1 - - [13/Jun/2026 00:11:56] "[36mGET /manifest.json HTTP/1.1[0m" 304 -
+127.0.0.1 - - [13/Jun/2026 00:12:10] "GET /briefing HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2026 00:12:11] "GET /gmail/unread HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2026 00:12:11] "[31m[1mPOST /location HTTP/1.1[0m" 405 -
+127.0.0.1 - - [13/Jun/2026 00:12:12] "POST /tts HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2026 00:12:52] "[33mGET /apple-touch-icon.png HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Jun/2026 00:12:52] "[33mGET /apple-touch-icon-precomposed.png HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Jun/2026 00:12:52] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Jun/2026 00:12:52] "GET /favicon.svg HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2026 00:13:00] "[33mGET /apple-touch-icon-120x120-precomposed.png HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Jun/2026 00:13:00] "[33mGET /apple-touch-icon-120x120.png HTTP/1.1[0m" 404 -
+192.168.1.110 - - [13/Jun/2026 00:17:30] "GET /elevenlabs/usage HTTP/1.1" 200 -
+192.168.1.110 - - [13/Jun/2026 00:24:26] "GET / HTTP/1.1" 200 -
+192.168.1.110 - - [13/Jun/2026 00:24:27] "GET /manifest.json HTTP/1.1" 200 -
+192.168.1.110 - - [13/Jun/2026 00:24:27] "GET /assets/index-BesNU1K4.css HTTP/1.1" 200 -
+192.168.1.110 - - [13/Jun/2026 00:24:27] "GET /assets/index-BEYstNpb.js HTTP/1.1" 200 -
+192.168.1.110 - - [13/Jun/2026 00:26:42] "GET / HTTP/1.1" 200 -
+192.168.1.110 - - [13/Jun/2026 00:26:42] "GET /manifest.json HTTP/1.1" 200 -
+192.168.1.110 - - [13/Jun/2026 00:26:42] "GET /assets/index-BesNU1K4.css HTTP/1.1" 200 -
+192.168.1.110 - - [13/Jun/2026 00:26:42] "GET /assets/index-BEYstNpb.js HTTP/1.1" 200 -
+192.168.1.110 - - [13/Jun/2026 00:30:12] "GET /?v=3 HTTP/1.1" 200 -
+192.168.1.110 - - [13/Jun/2026 00:30:12] "[36mGET /assets/index-BEYstNpb.js HTTP/1.1[0m" 304 -
+192.168.1.110 - - [13/Jun/2026 00:30:12] "GET /manifest.json HTTP/1.1" 200 -
+192.168.1.110 - - [13/Jun/2026 00:30:12] "[36mGET /assets/index-BesNU1K4.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [13/Jun/2026 00:48:10] "GET /briefing HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2026 00:54:01] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2026 00:54:01] "GET /manifest.json HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2026 00:54:01] "GET /assets/index-BEYstNpb.js HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2026 00:54:01] "GET /assets/index-BesNU1K4.css HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2026 00:54:05] "GET /briefing HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2026 00:54:06] "GET /gmail/unread HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2026 00:54:07] "POST /tts HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2026 00:54:07] "[31m[1mPOST /location HTTP/1.1[0m" 405 -
+127.0.0.1 - - [13/Jun/2026 00:54:07] "[36mGET /favicon.svg HTTP/1.1[0m" 304 -
+127.0.0.1 - - [13/Jun/2026 00:56:44] "GET /elevenlabs/usage HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2026 00:57:58] "POST /chat HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2026 00:58:03] "POST /tts HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2026 00:59:19] "POST /chat HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2026 00:59:28] "POST /tts HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2026 01:03:56] "POST /chat HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2026 01:04:03] "POST /tts HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2026 01:07:13] "POST /chat HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2026 01:07:27] "POST /tts HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2026 01:15:00] "POST /chat HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2026 01:15:10] "POST /tts HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2026 01:19:44] "POST /chat HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2026 01:19:53] "POST /tts HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2026 01:20:41] "GET /elevenlabs/usage HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2026 01:21:20] "POST /chat HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2026 01:21:33] "POST /tts HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2026 01:24:29] "POST /chat HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2026 01:24:33] "POST /tts HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2026 01:25:53] "POST /chat HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2026 01:25:58] "POST /tts HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2026 01:27:37] "POST /chat HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2026 01:27:43] "POST /tts HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2026 01:29:11] "POST /chat HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2026 01:29:13] "POST /tts HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2026 01:29:44] "POST /chat HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2026 01:29:45] "POST /tts HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2026 01:31:52] "[36mGET / HTTP/1.1[0m" 304 -
+127.0.0.1 - - [13/Jun/2026 01:31:52] "[36mGET /manifest.json HTTP/1.1[0m" 304 -
+127.0.0.1 - - [13/Jun/2026 01:31:57] "[31m[1mPOST /location HTTP/1.1[0m" 405 -
+127.0.0.1 - - [13/Jun/2026 01:31:57] "GET /briefing HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2026 01:31:58] "GET /gmail/unread HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2026 01:31:59] "POST /tts HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2026 02:03:20] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2026 02:03:20] "GET /manifest.json HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2026 02:03:20] "GET /assets/index-BesNU1K4.css HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2026 02:03:20] "[36mGET /assets/index-BEYstNpb.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [13/Jun/2026 02:03:22] "[31m[1mPOST /location HTTP/1.1[0m" 405 -
+127.0.0.1 - - [13/Jun/2026 02:03:22] "GET /gmail/unread HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2026 02:03:23] "GET /briefing HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2026 02:03:24] "POST /tts HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2026 02:03:25] "[36mGET /favicon.svg HTTP/1.1[0m" 304 -
+127.0.0.1 - - [13/Jun/2026 02:42:34] "[36mGET / HTTP/1.1[0m" 304 -
+127.0.0.1 - - [13/Jun/2026 02:42:35] "[36mGET /manifest.json HTTP/1.1[0m" 304 -
+127.0.0.1 - - [13/Jun/2026 02:42:44] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Jun/2026 02:42:44] "[33mGET /apple-touch-icon.png HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Jun/2026 02:42:44] "[36mGET /favicon.svg HTTP/1.1[0m" 304 -
+127.0.0.1 - - [13/Jun/2026 02:42:44] "[33mGET /apple-touch-icon-precomposed.png HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Jun/2026 02:42:53] "GET /gmail/unread HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2026 02:42:53] "GET /briefing HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2026 02:42:53] "[31m[1mPOST /location HTTP/1.1[0m" 405 -
+127.0.0.1 - - [13/Jun/2026 02:42:58] "POST /tts HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2026 14:49:37] "[31m[1mPOST /location HTTP/1.1[0m" 405 -
+127.0.0.1 - - [13/Jun/2026 14:49:38] "GET /gmail/unread HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2026 14:49:38] "GET /briefing HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2026 14:49:40] "POST /tts HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2026 14:49:41] "[36mGET /favicon.svg HTTP/1.1[0m" 304 -
+127.0.0.1 - - [13/Jun/2026 18:43:48] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2026 18:43:50] "[31m[1mPOST /location HTTP/1.1[0m" 405 -
+127.0.0.1 - - [13/Jun/2026 18:43:51] "GET /gmail/unread HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2026 18:43:52] "GET /briefing HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2026 18:43:54] "POST /tts HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2026 18:44:23] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Jun/2026 18:44:23] "[33mGET /apple-touch-icon-precomposed.png HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Jun/2026 18:44:23] "[33mGET /apple-touch-icon.png HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Jun/2026 18:44:23] "[36mGET /favicon.svg HTTP/1.1[0m" 304 -
+127.0.0.1 - - [13/Jun/2026 18:44:26] "[36mGET /favicon.svg HTTP/1.1[0m" 304 -
+127.0.0.1 - - [13/Jun/2026 18:44:26] "[36mGET /favicon.svg HTTP/1.1[0m" 304 -
+127.0.0.1 - - [13/Jun/2026 18:44:26] "[33mGET /apple-touch-icon-120x120-precomposed.png HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Jun/2026 18:44:26] "[33mGET /apple-touch-icon-120x120.png HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Jun/2026 18:44:26] "[33mGET /apple-touch-icon.png HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Jun/2026 18:44:53] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2026 18:44:53] "GET /manifest.json HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2026 18:44:53] "[36mGET /assets/index-BEYstNpb.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [13/Jun/2026 18:44:53] "[36mGET /assets/index-BesNU1K4.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [13/Jun/2026 18:44:55] "[31m[1mPOST /location HTTP/1.1[0m" 405 -
+127.0.0.1 - - [13/Jun/2026 18:44:56] "GET /gmail/unread HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2026 18:44:56] "GET /briefing HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2026 18:44:58] "POST /tts HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2026 18:44:58] "[36mGET /favicon.svg HTTP/1.1[0m" 304 -
+127.0.0.1 - - [13/Jun/2026 18:45:00] "GET /elevenlabs/usage HTTP/1.1" 200 -
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/google/oauth2/__init__.py:40: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/google/auth/__init__.py:54: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/google/api_core/_python_version_support.py:242: FutureWarning: You are using a non-supported Python version (3.9.6). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.10, and then update google.api_core.
+  warnings.warn(message, FutureWarning)
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.1.110:5001
+[33mPress CTRL+C to quit[0m
+192.168.1.110 - - [13/Jun/2026 19:34:24] "GET / HTTP/1.1" 200 -
+192.168.1.110 - - [13/Jun/2026 19:34:24] "GET /manifest.json HTTP/1.1" 200 -
+192.168.1.110 - - [13/Jun/2026 19:34:24] "GET /assets/index-BEYstNpb.js HTTP/1.1" 200 -
+192.168.1.110 - - [13/Jun/2026 19:34:24] "GET /assets/index-BesNU1K4.css HTTP/1.1" 200 -
+192.168.1.110 - - [13/Jun/2026 19:34:24] "GET /favicon.svg HTTP/1.1" 200 -
+192.168.1.110 - - [13/Jun/2026 19:34:24] "GET /favicon.svg HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2026 19:34:32] "GET /gmail/unread HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2026 19:34:33] "GET /briefing HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2026 19:34:33] "OPTIONS /tts HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2026 19:34:35] "POST /tts HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2026 19:35:09] "OPTIONS /chat HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2026 19:35:18] "POST /chat HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2026 19:35:18] "OPTIONS /tts HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2026 19:35:28] "POST /tts HTTP/1.1" 200 -
+192.168.1.110 - - [13/Jun/2026 19:35:41] "[36mGET /favicon.svg HTTP/1.1[0m" 304 -
+127.0.0.1 - - [13/Jun/2026 19:54:58] "GET /briefing HTTP/1.1" 200 -
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/google/oauth2/__init__.py:40: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/google/auth/__init__.py:54: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/google/api_core/_python_version_support.py:242: FutureWarning: You are using a non-supported Python version (3.9.6). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.10, and then update google.api_core.
+  warnings.warn(message, FutureWarning)
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.1.110:5001
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [13/Jun/2026 21:30:57] "[33mPOST /heygen/create HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Jun/2026 21:36:35] "[31m[1mPOST /heygen/create HTTP/1.1[0m" 400 -
+127.0.0.1 - - [13/Jun/2026 21:41:28] "POST /heygen/create HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2026 21:41:59] "[33mGET /heygen/status/dd7a3840e14840f4935654e80f8b5051 HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Jun/2026 22:06:42] "[36mGET / HTTP/1.1[0m" 304 -
+127.0.0.1 - - [13/Jun/2026 22:06:42] "GET /assets/index-BEYstNpb.js HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2026 22:06:42] "[36mGET /assets/index-BesNU1K4.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [13/Jun/2026 22:06:42] "[36mGET /manifest.json HTTP/1.1[0m" 304 -
+127.0.0.1 - - [13/Jun/2026 22:06:42] "[33mGET /apple-touch-icon.png HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Jun/2026 22:06:42] "[33mGET /apple-touch-icon-precomposed.png HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Jun/2026 22:06:42] "[36mGET /favicon.svg HTTP/1.1[0m" 304 -
+127.0.0.1 - - [13/Jun/2026 22:06:42] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+127.0.0.1 - - [13/Jun/2026 22:06:47] "GET /gmail/unread HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2026 22:06:47] "[31m[1mPOST /location HTTP/1.1[0m" 405 -
+127.0.0.1 - - [13/Jun/2026 22:06:47] "GET /briefing HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2026 22:06:49] "POST /tts HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2026 22:06:49] "[36mGET /favicon.svg HTTP/1.1[0m" 304 -
+127.0.0.1 - - [13/Jun/2026 22:07:00] "GET /auth/google HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2026 22:22:14] "[36mGET / HTTP/1.1[0m" 304 -
+127.0.0.1 - - [13/Jun/2026 22:22:15] "[36mGET /manifest.json HTTP/1.1[0m" 304 -
+127.0.0.1 - - [13/Jun/2026 22:22:29] "GET /gmail/unread HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2026 22:22:29] "GET /briefing HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2026 22:22:29] "[31m[1mPOST /location HTTP/1.1[0m" 405 -
+127.0.0.1 - - [13/Jun/2026 22:22:31] "POST /tts HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2026 22:22:52] "GET /elevenlabs/usage HTTP/1.1" 200 -
+127.0.0.1 - - [13/Jun/2026 23:01:55] "GET /elevenlabs/usage HTTP/1.1" 200 -
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/google/oauth2/__init__.py:40: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/google/auth/__init__.py:54: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/google/api_core/_python_version_support.py:242: FutureWarning: You are using a non-supported Python version (3.9.6). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.10, and then update google.api_core.
+  warnings.warn(message, FutureWarning)
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.1.110:5001
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [14/Jun/2026 00:28:01] "POST /chat HTTP/1.1" 200 -
+127.0.0.1 - - [14/Jun/2026 00:30:19] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [14/Jun/2026 00:30:19] "[36mGET /manifest.json HTTP/1.1[0m" 304 -
+127.0.0.1 - - [14/Jun/2026 00:30:19] "[33mGET /apple-touch-icon.png HTTP/1.1[0m" 404 -
+127.0.0.1 - - [14/Jun/2026 00:30:19] "[36mGET /favicon.svg HTTP/1.1[0m" 304 -
+127.0.0.1 - - [14/Jun/2026 00:30:19] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+127.0.0.1 - - [14/Jun/2026 00:30:19] "[33mGET /apple-touch-icon-precomposed.png HTTP/1.1[0m" 404 -
+127.0.0.1 - - [14/Jun/2026 00:30:22] "[31m[1mPOST /location HTTP/1.1[0m" 405 -
+127.0.0.1 - - [14/Jun/2026 00:30:22] "GET /gmail/unread HTTP/1.1" 200 -
+127.0.0.1 - - [14/Jun/2026 00:30:23] "GET /briefing HTTP/1.1" 200 -
+127.0.0.1 - - [14/Jun/2026 00:30:27] "POST /tts HTTP/1.1" 200 -
+127.0.0.1 - - [14/Jun/2026 00:30:56] "POST /chat HTTP/1.1" 200 -
+127.0.0.1 - - [14/Jun/2026 00:30:58] "POST /tts HTTP/1.1" 200 -
+127.0.0.1 - - [14/Jun/2026 00:41:26] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [14/Jun/2026 00:41:26] "GET /manifest.json HTTP/1.1" 200 -
+127.0.0.1 - - [14/Jun/2026 00:41:30] "[31m[1mPOST /location HTTP/1.1[0m" 405 -
+127.0.0.1 - - [14/Jun/2026 00:41:31] "GET /gmail/unread HTTP/1.1" 200 -
+127.0.0.1 - - [14/Jun/2026 00:41:31] "GET /briefing HTTP/1.1" 200 -
+127.0.0.1 - - [14/Jun/2026 00:41:33] "POST /tts HTTP/1.1" 200 -
+127.0.0.1 - - [14/Jun/2026 00:41:41] "GET /auth/google HTTP/1.1" 200 -
+127.0.0.1 - - [14/Jun/2026 00:46:24] "[36mGET / HTTP/1.1[0m" 304 -
+127.0.0.1 - - [14/Jun/2026 00:46:24] "[36mGET /manifest.json HTTP/1.1[0m" 304 -
+127.0.0.1 - - [14/Jun/2026 00:46:33] "GET /gmail/unread HTTP/1.1" 200 -
+127.0.0.1 - - [14/Jun/2026 00:46:33] "GET /briefing HTTP/1.1" 200 -
+127.0.0.1 - - [14/Jun/2026 00:46:33] "[31m[1mPOST /location HTTP/1.1[0m" 405 -
+127.0.0.1 - - [14/Jun/2026 00:46:35] "POST /tts HTTP/1.1" 200 -
+127.0.0.1 - - [14/Jun/2026 01:18:05] "POST /chat HTTP/1.1" 200 -
+127.0.0.1 - - [14/Jun/2026 01:18:17] "POST /tts HTTP/1.1" 200 -
+127.0.0.1 - - [14/Jun/2026 01:19:44] "POST /chat HTTP/1.1" 200 -
+127.0.0.1 - - [14/Jun/2026 01:19:48] "POST /tts HTTP/1.1" 200 -
+127.0.0.1 - - [14/Jun/2026 01:21:43] "POST /chat HTTP/1.1" 200 -
+127.0.0.1 - - [14/Jun/2026 01:21:44] "POST /tts HTTP/1.1" 200 -
+127.0.0.1 - - [14/Jun/2026 01:40:50] "POST /chat HTTP/1.1" 200 -
+127.0.0.1 - - [14/Jun/2026 01:40:58] "POST /tts HTTP/1.1" 200 -
+127.0.0.1 - - [14/Jun/2026 14:43:05] "GET /elevenlabs/usage HTTP/1.1" 200 -
+127.0.0.1 - - [14/Jun/2026 14:43:29] "POST /chat HTTP/1.1" 200 -
+192.168.1.111 - - [14/Jun/2026 15:08:38] "GET / HTTP/1.1" 200 -
+192.168.1.111 - - [14/Jun/2026 15:08:38] "GET /favicon.svg HTTP/1.1" 200 -
+192.168.1.111 - - [14/Jun/2026 15:08:38] "GET /favicon.svg HTTP/1.1" 200 -
+192.168.1.111 - - [14/Jun/2026 15:08:38] "[33mGET /apple-touch-icon-precomposed.png HTTP/1.1[0m" 404 -
+192.168.1.111 - - [14/Jun/2026 15:08:38] "[33mGET /apple-touch-icon.png HTTP/1.1[0m" 404 -
+192.168.1.111 - - [14/Jun/2026 15:08:38] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/google/oauth2/__init__.py:40: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/google/auth/__init__.py:54: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/google/api_core/_python_version_support.py:242: FutureWarning: You are using a non-supported Python version (3.9.6). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.10, and then update google.api_core.
+  warnings.warn(message, FutureWarning)
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.1.110:5001
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [14/Jun/2026 15:13:46] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+127.0.0.1 - - [14/Jun/2026 15:13:46] "[33mGET /apple-touch-icon.png HTTP/1.1[0m" 404 -
+127.0.0.1 - - [14/Jun/2026 15:13:46] "[33mGET /apple-touch-icon-precomposed.png HTTP/1.1[0m" 404 -
+127.0.0.1 - - [14/Jun/2026 15:13:46] "[36mGET /favicon.svg HTTP/1.1[0m" 304 -
+127.0.0.1 - - [14/Jun/2026 15:24:18] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [14/Jun/2026 15:24:18] "GET /manifest.json HTTP/1.1" 200 -
+127.0.0.1 - - [14/Jun/2026 15:24:18] "[36mGET /assets/index-BesNU1K4.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [14/Jun/2026 15:24:18] "[36mGET /assets/index-BEYstNpb.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [14/Jun/2026 15:24:21] "GET /gmail/unread HTTP/1.1" 200 -
+127.0.0.1 - - [14/Jun/2026 15:24:22] "[31m[1mPOST /location HTTP/1.1[0m" 405 -
+127.0.0.1 - - [14/Jun/2026 15:24:22] "GET /briefing HTTP/1.1" 200 -
+127.0.0.1 - - [14/Jun/2026 15:24:24] "POST /tts HTTP/1.1" 200 -
+127.0.0.1 - - [14/Jun/2026 15:24:25] "[36mGET /favicon.svg HTTP/1.1[0m" 304 -
+127.0.0.1 - - [14/Jun/2026 17:21:17] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [14/Jun/2026 17:21:20] "[33mGET /apple-touch-icon.png HTTP/1.1[0m" 404 -
+127.0.0.1 - - [14/Jun/2026 17:21:20] "[33mGET /apple-touch-icon-precomposed.png HTTP/1.1[0m" 404 -
+127.0.0.1 - - [14/Jun/2026 17:21:20] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+127.0.0.1 - - [14/Jun/2026 17:21:20] "[36mGET /favicon.svg HTTP/1.1[0m" 304 -
+127.0.0.1 - - [14/Jun/2026 17:27:02] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [14/Jun/2026 17:27:02] "[36mGET /manifest.json HTTP/1.1[0m" 304 -
+127.0.0.1 - - [14/Jun/2026 17:27:06] "[31m[1mPOST /location HTTP/1.1[0m" 405 -
+127.0.0.1 - - [14/Jun/2026 17:27:07] "GET /gmail/unread HTTP/1.1" 200 -
+127.0.0.1 - - [14/Jun/2026 17:27:07] "GET /briefing HTTP/1.1" 200 -
+127.0.0.1 - - [14/Jun/2026 17:27:09] "POST /tts HTTP/1.1" 200 -
+127.0.0.1 - - [14/Jun/2026 22:22:05] "[36mGET / HTTP/1.1[0m" 304 -
+127.0.0.1 - - [14/Jun/2026 22:22:05] "[36mGET /manifest.json HTTP/1.1[0m" 304 -
+127.0.0.1 - - [14/Jun/2026 22:22:05] "[36mGET /assets/index-BesNU1K4.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [14/Jun/2026 22:22:05] "[36mGET /assets/index-BEYstNpb.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [14/Jun/2026 22:22:07] "[31m[1mPOST /location HTTP/1.1[0m" 405 -
+127.0.0.1 - - [14/Jun/2026 22:22:08] "GET /gmail/unread HTTP/1.1" 200 -
+127.0.0.1 - - [14/Jun/2026 22:22:08] "GET /briefing HTTP/1.1" 200 -
+127.0.0.1 - - [14/Jun/2026 22:22:11] "POST /tts HTTP/1.1" 200 -
+127.0.0.1 - - [14/Jun/2026 22:22:11] "[36mGET /favicon.svg HTTP/1.1[0m" 304 -
+127.0.0.1 - - [14/Jun/2026 22:22:23] "GET /elevenlabs/usage HTTP/1.1" 200 -
+127.0.0.1 - - [14/Jun/2026 22:24:37] "[33mGET /apple-touch-icon.png HTTP/1.1[0m" 404 -
+127.0.0.1 - - [14/Jun/2026 22:24:37] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+127.0.0.1 - - [14/Jun/2026 22:24:37] "[33mGET /apple-touch-icon-precomposed.png HTTP/1.1[0m" 404 -
+127.0.0.1 - - [14/Jun/2026 22:24:37] "[36mGET /favicon.svg HTTP/1.1[0m" 304 -
+127.0.0.1 - - [15/Jun/2026 03:17:31] "GET /gmail/unread HTTP/1.1" 200 -
+127.0.0.1 - - [15/Jun/2026 03:17:31] "GET /briefing HTTP/1.1" 200 -
+127.0.0.1 - - [15/Jun/2026 03:17:33] "[31m[1mPOST /location HTTP/1.1[0m" 405 -
+127.0.0.1 - - [15/Jun/2026 03:17:34] "POST /tts HTTP/1.1" 200 -
+127.0.0.1 - - [15/Jun/2026 03:17:34] "[36mGET /favicon.svg HTTP/1.1[0m" 304 -
+127.0.0.1 - - [15/Jun/2026 03:19:24] "POST /chat HTTP/1.1" 200 -
+127.0.0.1 - - [15/Jun/2026 03:19:28] "POST /tts HTTP/1.1" 200 -
+127.0.0.1 - - [15/Jun/2026 03:21:15] "POST /chat HTTP/1.1" 200 -
+127.0.0.1 - - [15/Jun/2026 03:21:25] "POST /tts HTTP/1.1" 200 -
+127.0.0.1 - - [15/Jun/2026 03:24:32] "POST /chat HTTP/1.1" 200 -
+127.0.0.1 - - [15/Jun/2026 03:24:39] "POST /tts HTTP/1.1" 200 -
+127.0.0.1 - - [15/Jun/2026 03:27:20] "POST /chat HTTP/1.1" 200 -
+127.0.0.1 - - [15/Jun/2026 03:27:30] "POST /tts HTTP/1.1" 200 -
+127.0.0.1 - - [15/Jun/2026 03:29:16] "POST /chat HTTP/1.1" 200 -
+127.0.0.1 - - [15/Jun/2026 03:29:30] "POST /tts HTTP/1.1" 200 -
+127.0.0.1 - - [15/Jun/2026 03:34:31] "GET /elevenlabs/usage HTTP/1.1" 200 -
+127.0.0.1 - - [15/Jun/2026 19:41:56] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [15/Jun/2026 19:41:57] "[36mGET /assets/index-BesNU1K4.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [15/Jun/2026 19:41:57] "[36mGET /assets/index-BEYstNpb.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [15/Jun/2026 19:41:57] "[33mGET /apple-touch-icon.png HTTP/1.1[0m" 404 -
+127.0.0.1 - - [15/Jun/2026 19:41:57] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+127.0.0.1 - - [15/Jun/2026 19:41:57] "[36mGET /favicon.svg HTTP/1.1[0m" 304 -
+127.0.0.1 - - [15/Jun/2026 19:41:57] "[33mGET /apple-touch-icon-precomposed.png HTTP/1.1[0m" 404 -
+127.0.0.1 - - [15/Jun/2026 19:42:00] "[31m[1mPOST /location HTTP/1.1[0m" 405 -
+127.0.0.1 - - [15/Jun/2026 19:42:00] "GET /gmail/unread HTTP/1.1" 200 -
+127.0.0.1 - - [15/Jun/2026 19:42:01] "GET /briefing HTTP/1.1" 200 -
+127.0.0.1 - - [15/Jun/2026 19:42:03] "POST /tts HTTP/1.1" 200 -
+127.0.0.1 - - [15/Jun/2026 19:42:03] "[36mGET /favicon.svg HTTP/1.1[0m" 304 -
+127.0.0.1 - - [15/Jun/2026 21:25:51] "GET /auth/google HTTP/1.1" 200 -
+127.0.0.1 - - [15/Jun/2026 21:27:17] "GET /oauth/callback?iss=https://accounts.google.com&code=4/0AdkVLPwrtW5NW9ugUjpHBfEm7cq-LITVjGZDX96K8sJAuvmYpZKI5ty9l7vByf1kAcaXjg&scope=https://www.googleapis.com/auth/gmail.readonly%20https://www.googleapis.com/auth/calendar.readonly HTTP/1.1" 200 -
+127.0.0.1 - - [15/Jun/2026 21:27:34] "GET /briefing HTTP/1.1" 200 -
+192.168.1.110 - - [15/Jun/2026 21:29:25] "[36mGET / HTTP/1.1[0m" 304 -
+192.168.1.110 - - [15/Jun/2026 21:29:25] "[36mGET /manifest.json HTTP/1.1[0m" 304 -
+192.168.1.110 - - [15/Jun/2026 21:29:25] "[36mGET /favicon.svg HTTP/1.1[0m" 304 -
+192.168.1.110 - - [15/Jun/2026 21:29:25] "[36mGET /assets/index-BesNU1K4.css HTTP/1.1[0m" 304 -
+192.168.1.110 - - [15/Jun/2026 21:29:25] "[36mGET /assets/index-BEYstNpb.js HTTP/1.1[0m" 304 -
+192.168.1.110 - - [15/Jun/2026 21:32:02] "[36mGET / HTTP/1.1[0m" 304 -
+192.168.1.110 - - [15/Jun/2026 21:32:02] "[36mGET /manifest.json HTTP/1.1[0m" 304 -
+192.168.1.110 - - [15/Jun/2026 21:32:02] "[36mGET /assets/index-BesNU1K4.css HTTP/1.1[0m" 304 -
+192.168.1.110 - - [15/Jun/2026 21:32:02] "[36mGET /assets/index-BEYstNpb.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [15/Jun/2026 21:32:06] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [15/Jun/2026 21:32:06] "GET /manifest.json HTTP/1.1" 200 -
+127.0.0.1 - - [15/Jun/2026 21:32:06] "GET /assets/index-BEYstNpb.js HTTP/1.1" 200 -
+127.0.0.1 - - [15/Jun/2026 21:32:06] "GET /assets/index-BesNU1K4.css HTTP/1.1" 200 -
+127.0.0.1 - - [15/Jun/2026 21:32:06] "GET /favicon.svg HTTP/1.1" 200 -
+127.0.0.1 - - [15/Jun/2026 21:32:08] "GET /gmail/unread HTTP/1.1" 200 -
+127.0.0.1 - - [15/Jun/2026 21:32:09] "GET /briefing HTTP/1.1" 200 -
+127.0.0.1 - - [15/Jun/2026 21:32:09] "OPTIONS /tts HTTP/1.1" 200 -
+127.0.0.1 - - [15/Jun/2026 21:32:11] "POST /tts HTTP/1.1" 200 -
+192.168.1.110 - - [15/Jun/2026 21:33:23] "[36mGET / HTTP/1.1[0m" 304 -
+192.168.1.110 - - [15/Jun/2026 21:33:23] "[36mGET /manifest.json HTTP/1.1[0m" 304 -
+192.168.1.110 - - [15/Jun/2026 21:33:23] "[36mGET /assets/index-BesNU1K4.css HTTP/1.1[0m" 304 -
+192.168.1.110 - - [15/Jun/2026 21:33:23] "[36mGET /assets/index-BEYstNpb.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [15/Jun/2026 21:33:26] "GET /gmail/unread HTTP/1.1" 200 -
+127.0.0.1 - - [15/Jun/2026 21:33:26] "GET /briefing HTTP/1.1" 200 -
+127.0.0.1 - - [15/Jun/2026 21:33:26] "OPTIONS /tts HTTP/1.1" 200 -
+127.0.0.1 - - [15/Jun/2026 21:33:28] "POST /tts HTTP/1.1" 200 -
+192.168.1.110 - - [15/Jun/2026 21:33:28] "[36mGET /favicon.svg HTTP/1.1[0m" 304 -
+127.0.0.1 - - [15/Jun/2026 21:33:31] "GET /elevenlabs/usage HTTP/1.1" 200 -
+127.0.0.1 - - [15/Jun/2026 22:01:34] "[35m[1mGET /oauth/callback?iss=https://accounts.google.com&code=4/0AdkVLPwrtW5NW9ugUjpHBfEm7cq-LITVjGZDX96K8sJAuvmYpZKI5ty9l7vByf1kAcaXjg&scope=https://www.googleapis.com/auth/gmail.readonly%20https://www.googleapis.com/auth/calendar.readonly HTTP/1.1[0m" 500 -
+192.168.1.110 - - [15/Jun/2026 22:02:11] "[36mGET / HTTP/1.1[0m" 304 -
+192.168.1.110 - - [15/Jun/2026 22:02:11] "[36mGET /manifest.json HTTP/1.1[0m" 304 -
+192.168.1.110 - - [15/Jun/2026 22:02:11] "[36mGET /assets/index-BesNU1K4.css HTTP/1.1[0m" 304 -
+192.168.1.110 - - [15/Jun/2026 22:02:11] "[36mGET /assets/index-BEYstNpb.js HTTP/1.1[0m" 304 -
+192.168.1.110 - - [15/Jun/2026 22:02:37] "[36mGET / HTTP/1.1[0m" 304 -
+192.168.1.110 - - [15/Jun/2026 22:02:37] "[36mGET /manifest.json HTTP/1.1[0m" 304 -
+192.168.1.110 - - [15/Jun/2026 22:02:37] "[36mGET /assets/index-BesNU1K4.css HTTP/1.1[0m" 304 -
+192.168.1.110 - - [15/Jun/2026 22:02:37] "[36mGET /assets/index-BEYstNpb.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [15/Jun/2026 22:04:33] "[36mGET / HTTP/1.1[0m" 304 -
+127.0.0.1 - - [15/Jun/2026 22:04:34] "[36mGET /manifest.json HTTP/1.1[0m" 304 -
+127.0.0.1 - - [15/Jun/2026 22:04:34] "[33mGET /apple-touch-icon.png HTTP/1.1[0m" 404 -
+127.0.0.1 - - [15/Jun/2026 22:04:34] "[33mGET /apple-touch-icon-precomposed.png HTTP/1.1[0m" 404 -
+127.0.0.1 - - [15/Jun/2026 22:04:34] "[36mGET /favicon.svg HTTP/1.1[0m" 304 -
+127.0.0.1 - - [15/Jun/2026 22:04:34] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+127.0.0.1 - - [15/Jun/2026 22:05:18] "GET /briefing HTTP/1.1" 200 -
+127.0.0.1 - - [15/Jun/2026 22:05:18] "[31m[1mPOST /location HTTP/1.1[0m" 405 -
+127.0.0.1 - - [15/Jun/2026 22:05:18] "GET /gmail/unread HTTP/1.1" 200 -
+127.0.0.1 - - [15/Jun/2026 22:05:20] "POST /tts HTTP/1.1" 200 -
+127.0.0.1 - - [15/Jun/2026 22:10:24] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [15/Jun/2026 22:10:24] "[36mGET /assets/index-BEYstNpb.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [15/Jun/2026 22:10:24] "[36mGET /assets/index-BesNU1K4.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [15/Jun/2026 22:10:24] "[36mGET /favicon.svg HTTP/1.1[0m" 304 -
+127.0.0.1 - - [15/Jun/2026 22:10:24] "GET /manifest.json HTTP/1.1" 200 -
+127.0.0.1 - - [15/Jun/2026 22:10:27] "GET /gmail/unread HTTP/1.1" 200 -
+127.0.0.1 - - [15/Jun/2026 22:10:27] "GET /briefing HTTP/1.1" 200 -
+127.0.0.1 - - [15/Jun/2026 22:10:29] "POST /tts HTTP/1.1" 200 -
+127.0.0.1 - - [15/Jun/2026 22:10:38] "[31m[1mPOST /location HTTP/1.1[0m" 405 -
+127.0.0.1 - - [15/Jun/2026 22:37:20] "POST /chat HTTP/1.1" 200 -
+127.0.0.1 - - [15/Jun/2026 22:37:35] "POST /tts HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2026 20:18:08] "[36mGET / HTTP/1.1[0m" 304 -
+127.0.0.1 - - [16/Jun/2026 20:18:08] "[36mGET /manifest.json HTTP/1.1[0m" 304 -
+127.0.0.1 - - [16/Jun/2026 20:18:08] "[36mGET /assets/index-BesNU1K4.css HTTP/1.1[0m" 304 -
+127.0.0.1 - - [16/Jun/2026 20:18:08] "[36mGET /assets/index-BEYstNpb.js HTTP/1.1[0m" 304 -
+127.0.0.1 - - [16/Jun/2026 20:18:08] "[36mGET /favicon.svg HTTP/1.1[0m" 304 -
+127.0.0.1 - - [16/Jun/2026 20:18:08] "[33mGET /apple-touch-icon.png HTTP/1.1[0m" 404 -
+127.0.0.1 - - [16/Jun/2026 20:18:08] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+127.0.0.1 - - [16/Jun/2026 20:18:08] "[33mGET /apple-touch-icon-precomposed.png HTTP/1.1[0m" 404 -
+127.0.0.1 - - [16/Jun/2026 20:18:14] "GET /gmail/unread HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2026 20:18:18] "[31m[1mPOST /location HTTP/1.1[0m" 405 -
+127.0.0.1 - - [16/Jun/2026 20:18:19] "GET /briefing HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2026 20:18:22] "POST /tts HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2026 20:18:22] "[36mGET /favicon.svg HTTP/1.1[0m" 304 -
+127.0.0.1 - - [16/Jun/2026 20:18:50] "[36mGET / HTTP/1.1[0m" 304 -
+127.0.0.1 - - [16/Jun/2026 20:18:50] "[36mGET /manifest.json HTTP/1.1[0m" 304 -
+127.0.0.1 - - [16/Jun/2026 20:19:00] "[36mGET / HTTP/1.1[0m" 304 -
+127.0.0.1 - - [16/Jun/2026 20:19:00] "[36mGET /manifest.json HTTP/1.1[0m" 304 -
+127.0.0.1 - - [16/Jun/2026 20:19:02] "[36mGET / HTTP/1.1[0m" 304 -
+127.0.0.1 - - [16/Jun/2026 20:19:02] "[36mGET /manifest.json HTTP/1.1[0m" 304 -
+127.0.0.1 - - [16/Jun/2026 20:19:04] "[36mGET / HTTP/1.1[0m" 304 -
+127.0.0.1 - - [16/Jun/2026 20:19:04] "[36mGET /manifest.json HTTP/1.1[0m" 304 -
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/google/oauth2/__init__.py:40: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/google/auth/__init__.py:54: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/google/api_core/_python_version_support.py:242: FutureWarning: You are using a non-supported Python version (3.9.6). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.10, and then update google.api_core.
+  warnings.warn(message, FutureWarning)
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.1.110:5001
+[33mPress CTRL+C to quit[0m
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/google/oauth2/__init__.py:40: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/google/auth/__init__.py:54: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/google/api_core/_python_version_support.py:242: FutureWarning: You are using a non-supported Python version (3.9.6). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.10, and then update google.api_core.
+  warnings.warn(message, FutureWarning)
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.1.110:5001
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [16/Jun/2026 20:46:35] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2026 20:46:35] "GET /manifest.json HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2026 20:46:35] "GET /assets/index-CKpCrUIo.js HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2026 20:46:37] "GET /gmail/unread HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2026 20:46:38] "GET /briefing HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2026 20:46:38] "[31m[1mPOST /location HTTP/1.1[0m" 405 -
+127.0.0.1 - - [16/Jun/2026 20:46:40] "POST /tts HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2026 20:49:42] "POST /chat HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2026 20:49:47] "POST /tts HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2026 20:49:51] "POST /upload HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2026 20:50:28] "GET /elevenlabs/usage HTTP/1.1" 200 -
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/google/oauth2/__init__.py:40: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/google/auth/__init__.py:54: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/google/api_core/_python_version_support.py:242: FutureWarning: You are using a non-supported Python version (3.9.6). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.10, and then update google.api_core.
+  warnings.warn(message, FutureWarning)
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.1.110:5001
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [16/Jun/2026 21:00:40] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2026 21:00:40] "GET /manifest.json HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2026 21:00:40] "GET /assets/index-CDgxZfK1.js HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2026 21:00:40] "[36mGET / HTTP/1.1[0m" 304 -
+127.0.0.1 - - [16/Jun/2026 21:00:41] "[36mGET /manifest.json HTTP/1.1[0m" 304 -
+127.0.0.1 - - [16/Jun/2026 21:00:46] "GET /gmail/unread HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2026 21:00:46] "[31m[1mPOST /location HTTP/1.1[0m" 405 -
+127.0.0.1 - - [16/Jun/2026 21:00:47] "GET /briefing HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2026 21:00:49] "POST /tts HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2026 21:01:47] "POST /upload HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2026 21:01:51] "GET /elevenlabs/usage HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2026 21:03:31] "POST /chat HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2026 21:03:44] "POST /tts HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2026 21:04:35] "GET /elevenlabs/usage HTTP/1.1" 200 -
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/google/oauth2/__init__.py:40: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/google/auth/__init__.py:54: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/google/api_core/_python_version_support.py:242: FutureWarning: You are using a non-supported Python version (3.9.6). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.10, and then update google.api_core.
+  warnings.warn(message, FutureWarning)
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.1.110:5001
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [16/Jun/2026 21:27:42] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2026 21:27:42] "GET /manifest.json HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2026 21:27:42] "GET /favicon.svg HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2026 21:27:42] "[33mGET /apple-touch-icon-precomposed.png HTTP/1.1[0m" 404 -
+127.0.0.1 - - [16/Jun/2026 21:27:42] "[33mGET /apple-touch-icon.png HTTP/1.1[0m" 404 -
+127.0.0.1 - - [16/Jun/2026 21:27:42] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+127.0.0.1 - - [16/Jun/2026 21:27:43] "[36mGET / HTTP/1.1[0m" 304 -
+127.0.0.1 - - [16/Jun/2026 21:27:43] "[36mGET /manifest.json HTTP/1.1[0m" 304 -
+127.0.0.1 - - [16/Jun/2026 21:27:46] "[31m[1mPOST /location HTTP/1.1[0m" 405 -
+127.0.0.1 - - [16/Jun/2026 21:27:46] "GET /gmail/unread HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2026 21:27:47] "GET /briefing HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2026 21:27:49] "POST /tts HTTP/1.1" 200 -
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/google/oauth2/__init__.py:40: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/google/auth/__init__.py:54: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/google/api_core/_python_version_support.py:242: FutureWarning: You are using a non-supported Python version (3.9.6). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.10, and then update google.api_core.
+  warnings.warn(message, FutureWarning)
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.1.110:5001
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [16/Jun/2026 21:30:41] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2026 21:30:41] "[36mGET /manifest.json HTTP/1.1[0m" 304 -
+127.0.0.1 - - [16/Jun/2026 21:30:42] "[36mGET / HTTP/1.1[0m" 304 -
+127.0.0.1 - - [16/Jun/2026 21:30:42] "[36mGET /manifest.json HTTP/1.1[0m" 304 -
+127.0.0.1 - - [16/Jun/2026 21:30:44] "[31m[1mPOST /location HTTP/1.1[0m" 405 -
+127.0.0.1 - - [16/Jun/2026 21:30:44] "GET /gmail/unread HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2026 21:30:47] "GET /briefing HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2026 21:30:49] "POST /tts HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2026 21:31:18] "POST /tiktok/skript HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2026 21:31:18] "POST /chat HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2026 21:31:31] "POST /tts HTTP/1.1" 200 -
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/google/oauth2/__init__.py:40: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/google/auth/__init__.py:54: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/google/api_core/_python_version_support.py:242: FutureWarning: You are using a non-supported Python version (3.9.6). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.10, and then update google.api_core.
+  warnings.warn(message, FutureWarning)
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.1.110:5001
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [16/Jun/2026 21:37:16] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2026 21:37:16] "[36mGET /manifest.json HTTP/1.1[0m" 304 -
+127.0.0.1 - - [16/Jun/2026 21:37:22] "[31m[1mPOST /location HTTP/1.1[0m" 405 -
+127.0.0.1 - - [16/Jun/2026 21:37:22] "GET /gmail/unread HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2026 21:37:22] "GET /briefing HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2026 21:37:24] "POST /tts HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2026 21:37:27] "GET /elevenlabs/usage HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2026 21:37:57] "POST /tiktok/skript HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2026 21:37:57] "POST /chat HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2026 21:38:10] "POST /tts HTTP/1.1" 200 -
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/google/oauth2/__init__.py:40: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/google/auth/__init__.py:54: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/google/api_core/_python_version_support.py:242: FutureWarning: You are using a non-supported Python version (3.9.6). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.10, and then update google.api_core.
+  warnings.warn(message, FutureWarning)
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.1.110:5001
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [16/Jun/2026 21:53:12] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2026 21:53:12] "GET /manifest.json HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2026 21:53:13] "[36mGET / HTTP/1.1[0m" 304 -
+127.0.0.1 - - [16/Jun/2026 21:53:13] "[36mGET /manifest.json HTTP/1.1[0m" 304 -
+127.0.0.1 - - [16/Jun/2026 21:53:32] "GET /gmail/unread HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2026 21:53:33] "[31m[1mPOST /location HTTP/1.1[0m" 405 -
+127.0.0.1 - - [16/Jun/2026 21:53:33] "GET /briefing HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2026 21:53:35] "POST /tts HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2026 21:53:55] "POST /tiktok/skript HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2026 21:53:55] "POST /chat HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2026 21:54:07] "POST /tts HTTP/1.1" 200 -
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/google/oauth2/__init__.py:40: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/google/auth/__init__.py:54: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/google/api_core/_python_version_support.py:242: FutureWarning: You are using a non-supported Python version (3.9.6). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.10, and then update google.api_core.
+  warnings.warn(message, FutureWarning)
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.1.110:5001
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [16/Jun/2026 22:06:30] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2026 22:06:30] "[36mGET /manifest.json HTTP/1.1[0m" 304 -
+127.0.0.1 - - [16/Jun/2026 22:06:31] "[36mGET / HTTP/1.1[0m" 304 -
+127.0.0.1 - - [16/Jun/2026 22:06:31] "[36mGET /manifest.json HTTP/1.1[0m" 304 -
+127.0.0.1 - - [16/Jun/2026 22:06:33] "[31m[1mPOST /location HTTP/1.1[0m" 405 -
+127.0.0.1 - - [16/Jun/2026 22:06:34] "GET /gmail/unread HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2026 22:06:34] "GET /briefing HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2026 22:06:36] "POST /tts HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2026 22:08:02] "POST /chat HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2026 22:08:14] "POST /tts HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2026 22:10:05] "POST /chat HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2026 22:10:19] "POST /tts HTTP/1.1" 200 -
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/google/oauth2/__init__.py:40: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/google/auth/__init__.py:54: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/google/api_core/_python_version_support.py:242: FutureWarning: You are using a non-supported Python version (3.9.6). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.10, and then update google.api_core.
+  warnings.warn(message, FutureWarning)
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.1.110:5001
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [16/Jun/2026 22:13:30] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2026 22:13:30] "[36mGET /manifest.json HTTP/1.1[0m" 304 -
+127.0.0.1 - - [16/Jun/2026 22:13:31] "[36mGET / HTTP/1.1[0m" 304 -
+127.0.0.1 - - [16/Jun/2026 22:13:31] "[36mGET /manifest.json HTTP/1.1[0m" 304 -
+127.0.0.1 - - [16/Jun/2026 22:14:12] "[31m[1mPOST /location HTTP/1.1[0m" 405 -
+127.0.0.1 - - [16/Jun/2026 22:14:12] "GET /gmail/unread HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2026 22:14:13] "GET /briefing HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2026 22:14:14] "POST /tts HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2026 22:16:28] "POST /chat HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2026 22:16:39] "POST /tts HTTP/1.1" 200 -
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/google/oauth2/__init__.py:40: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/google/auth/__init__.py:54: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/google/api_core/_python_version_support.py:242: FutureWarning: You are using a non-supported Python version (3.9.6). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.10, and then update google.api_core.
+  warnings.warn(message, FutureWarning)
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.1.110:5001
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [16/Jun/2026 22:21:14] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2026 22:21:14] "[36mGET /manifest.json HTTP/1.1[0m" 304 -
+127.0.0.1 - - [16/Jun/2026 22:21:15] "[36mGET / HTTP/1.1[0m" 304 -
+127.0.0.1 - - [16/Jun/2026 22:21:15] "[36mGET /manifest.json HTTP/1.1[0m" 304 -
+127.0.0.1 - - [16/Jun/2026 22:21:21] "GET /gmail/unread HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2026 22:21:22] "GET /briefing HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2026 22:21:22] "POST /location HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2026 22:21:23] "POST /tts HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2026 22:22:42] "GET /elevenlabs/usage HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2026 22:22:45] "POST /chat HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2026 22:22:54] "POST /tts HTTP/1.1" 200 -
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/google/oauth2/__init__.py:40: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/google/auth/__init__.py:54: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/google/api_core/_python_version_support.py:242: FutureWarning: You are using a non-supported Python version (3.9.6). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.10, and then update google.api_core.
+  warnings.warn(message, FutureWarning)
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.1.110:5001
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [16/Jun/2026 22:30:42] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2026 22:30:42] "GET /manifest.json HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2026 22:30:42] "GET /assets/index-BHrm2WcK.js HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2026 22:30:43] "GET /favicon.svg HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2026 22:30:43] "[33mGET /apple-touch-icon.png HTTP/1.1[0m" 404 -
+127.0.0.1 - - [16/Jun/2026 22:30:43] "[33mGET /apple-touch-icon-precomposed.png HTTP/1.1[0m" 404 -
+127.0.0.1 - - [16/Jun/2026 22:30:43] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+127.0.0.1 - - [16/Jun/2026 22:30:44] "[36mGET / HTTP/1.1[0m" 304 -
+127.0.0.1 - - [16/Jun/2026 22:30:44] "[36mGET /manifest.json HTTP/1.1[0m" 304 -
+127.0.0.1 - - [16/Jun/2026 22:30:47] "GET /gmail/unread HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2026 22:30:48] "POST /location HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2026 22:30:48] "GET /briefing HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2026 22:30:51] "POST /tts HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2026 22:31:33] "GET /elevenlabs/usage HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2026 22:31:33] "POST /chat HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2026 22:31:47] "POST /tts HTTP/1.1" 200 -
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/google/oauth2/__init__.py:40: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/google/auth/__init__.py:54: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/google/api_core/_python_version_support.py:242: FutureWarning: You are using a non-supported Python version (3.9.6). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.10, and then update google.api_core.
+  warnings.warn(message, FutureWarning)
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.1.110:5001
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [16/Jun/2026 23:11:38] "[33mGET /heygen/looks HTTP/1.1[0m" 404 -
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/google/oauth2/__init__.py:40: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/google/auth/__init__.py:54: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/google/api_core/_python_version_support.py:242: FutureWarning: You are using a non-supported Python version (3.9.6). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.10, and then update google.api_core.
+  warnings.warn(message, FutureWarning)
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.1.110:5001
+[33mPress CTRL+C to quit[0m
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/google/oauth2/__init__.py:40: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/google/auth/__init__.py:54: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/google/api_core/_python_version_support.py:242: FutureWarning: You are using a non-supported Python version (3.9.6). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.10, and then update google.api_core.
+  warnings.warn(message, FutureWarning)
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.1.110:5001
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [16/Jun/2026 23:16:33] "[33mGET /heygen/looks HTTP/1.1[0m" 404 -
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/google/oauth2/__init__.py:40: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/google/auth/__init__.py:54: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/google/api_core/_python_version_support.py:242: FutureWarning: You are using a non-supported Python version (3.9.6). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.10, and then update google.api_core.
+  warnings.warn(message, FutureWarning)
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.1.110:5001
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [16/Jun/2026 23:17:33] "[33mGET /heygen/looks HTTP/1.1[0m" 404 -
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/google/oauth2/__init__.py:40: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/google/auth/__init__.py:54: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/google/api_core/_python_version_support.py:242: FutureWarning: You are using a non-supported Python version (3.9.6). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.10, and then update google.api_core.
+  warnings.warn(message, FutureWarning)
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.1.110:5001
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [16/Jun/2026 23:19:44] "[35m[1mGET /heygen/looks HTTP/1.1[0m" 500 -
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/google/oauth2/__init__.py:40: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/google/auth/__init__.py:54: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/google/api_core/_python_version_support.py:242: FutureWarning: You are using a non-supported Python version (3.9.6). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.10, and then update google.api_core.
+  warnings.warn(message, FutureWarning)
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.1.110:5001
+[33mPress CTRL+C to quit[0m
+127.0.0.1 - - [16/Jun/2026 23:27:09] "GET /heygen/looks HTTP/1.1" 200 -
+127.0.0.1 - - [16/Jun/2026 23:37:32] "GET /elevenlabs/usage HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jun/2026 00:53:35] "GET /elevenlabs/usage HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jun/2026 00:54:10] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jun/2026 00:54:11] "[36mGET /manifest.json HTTP/1.1[0m" 304 -
+127.0.0.1 - - [17/Jun/2026 00:54:11] "GET /assets/index-BesNU1K4.css HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jun/2026 00:54:11] "[36mGET /favicon.svg HTTP/1.1[0m" 304 -
+127.0.0.1 - - [17/Jun/2026 00:54:11] "[33mGET /apple-touch-icon-precomposed.png HTTP/1.1[0m" 404 -
+127.0.0.1 - - [17/Jun/2026 00:54:11] "[33mGET /apple-touch-icon.png HTTP/1.1[0m" 404 -
+127.0.0.1 - - [17/Jun/2026 00:54:11] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+127.0.0.1 - - [17/Jun/2026 00:54:12] "[36mGET / HTTP/1.1[0m" 304 -
+127.0.0.1 - - [17/Jun/2026 00:54:12] "[36mGET /manifest.json HTTP/1.1[0m" 304 -
+127.0.0.1 - - [17/Jun/2026 00:54:15] "GET /gmail/unread HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jun/2026 00:54:16] "GET /briefing HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jun/2026 00:54:16] "POST /location HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jun/2026 00:54:18] "POST /tts HTTP/1.1" 200 -
+127.0.0.1 - - [17/Jun/2026 00:54:18] "[36mGET /favicon.svg HTTP/1.1[0m" 304 -
+127.0.0.1 - - [17/Jun/2026 01:04:30] "GET /elevenlabs/usage HTTP/1.1" 200 -
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/urllib3/__init__.py:35: NotOpenSSLWarning: urllib3 v2 only supports OpenSSL 1.1.1+, currently the 'ssl' module is compiled with 'LibreSSL 2.8.3'. See: https://github.com/urllib3/urllib3/issues/3020
+  warnings.warn(
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/google/oauth2/__init__.py:40: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/google/auth/__init__.py:54: FutureWarning: You are using a Python version 3.9 past its end of life. Google will update google-auth with critical bug fixes on a best-effort basis, but not with any other fixes or features. Please upgrade your Python version, and then update google-auth.
+  warnings.warn(eol_message.format("3.9"), FutureWarning)
+/Users/antonioruiz/Library/Python/3.9/lib/python/site-packages/google/api_core/_python_version_support.py:242: FutureWarning: You are using a non-supported Python version (3.9.6). Google will not post any further updates to google.api_core supporting this Python version. Please upgrade to the latest Python version, or at least Python 3.10, and then update google.api_core.
+  warnings.warn(message, FutureWarning)
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5001
+ * Running on http://192.168.1.110:5001
+[33mPress CTRL+C to quit[0m

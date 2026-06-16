@@ -6,7 +6,13 @@
       "Bash(curl -s http://127.0.0.1:5000/chat -X POST -H \"Content-Type: application/json\" -d '{\"messages\":[{\"role\":\"user\",\"content\":\"Hallo!\"}]}')",
       "Bash(curl *)",
       "Bash(xargs kill -9)",
-      "Bash(python3 *)"
+      "Bash(python3 *)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)",
+      "WebSearch",
+      "Bash(launchctl stop *)",
+      "Bash(launchctl start *)"
     ]
   }
 }

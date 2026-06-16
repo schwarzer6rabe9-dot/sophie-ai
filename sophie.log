@@ -1,0 +1,344 @@
+ * Serving Flask app 'server'
+ * Debug mode: off
+[MEMORY] Loaded: 6 recent, 4 facts
+[MEMORY] Saved to JSONBin: 200
+[MEMORY] Auto-summary saved
+[MEMORY] Loaded: 0 recent, 4 facts
+[MEMORY] Saved to JSONBin: 200
+[MEMORY] Auto-save at 22:00
+ * Serving Flask app 'server'
+ * Debug mode: off
+ * Serving Flask app 'server'
+ * Debug mode: off
+ * Serving Flask app 'server'
+ * Debug mode: off
+[MEMORY] Loaded: 1 recent, 4 facts
+[MEMORY] Loaded: 1 recent, 4 facts
+[MEMORY] Loaded: 1 recent, 4 facts
+[N8N] Status: 200, Body: {"headers":{"host":"meister6.app.n8n.cloud","user-agent":"python-requests/2.32.5","content-length":"
+ * Serving Flask app 'server'
+ * Debug mode: off
+[MEMORY] Loaded: 1 recent, 4 facts
+[MEMORY] Loaded: 1 recent, 4 facts
+[MEMORY] Loaded: 1 recent, 4 facts
+[MEMORY] JSONBin load failed: HTTPSConnectionPool(host='api.jsonbin.io', port=443): Read timed out. (read timeout=5)
+[MEMORY] Loaded: 1 recent, 4 facts
+[MEMORY] Loaded: 1 recent, 4 facts
+[MEMORY] Loaded: 1 recent, 4 facts
+[MEMORY] Loaded: 1 recent, 4 facts
+[MEMORY] Loaded: 1 recent, 4 facts
+[MEMORY] Saved to JSONBin: 200
+[MEMORY] Loaded: 2 recent, 4 facts
+[MEMORY] Saved to JSONBin: 200
+[MEMORY] Loaded: 3 recent, 4 facts
+[MEMORY] Saved to JSONBin: 200
+[MEMORY] Loaded: 4 recent, 4 facts
+[MEMORY] Saved to JSONBin: 200
+[MEMORY] Loaded: 5 recent, 4 facts
+[MEMORY] Saved to JSONBin: 200
+[MEMORY] Loaded: 6 recent, 4 facts
+[MEMORY] Saved to JSONBin: 200
+[MEMORY] Loaded: 6 recent, 4 facts
+[MEMORY] Saved to JSONBin: 200
+[MEMORY] Loaded: 6 recent, 4 facts
+[MEMORY] Saved to JSONBin: 200
+[MEMORY] Loaded: 6 recent, 4 facts
+[MEMORY] Saved to JSONBin: 200
+[MEMORY] Loaded: 6 recent, 4 facts
+[MEMORY] Saved to JSONBin: 200
+[MEMORY] Loaded: 6 recent, 4 facts
+[MEMORY] Saved to JSONBin: 200
+[MEMORY] Loaded: 6 recent, 4 facts
+[MEMORY] Saved to JSONBin: 200
+[MEMORY] Loaded: 6 recent, 4 facts
+[MEMORY] Loaded: 6 recent, 4 facts
+[MEMORY] Loaded: 6 recent, 4 facts
+[MEMORY] Loaded: 6 recent, 4 facts
+[MEMORY] Loaded: 6 recent, 4 facts
+[MEMORY] Loaded: 6 recent, 4 facts
+[MEMORY] Loaded: 6 recent, 4 facts
+[MEMORY] Loaded: 6 recent, 4 facts
+[MEMORY] Loaded: 6 recent, 4 facts
+[MEMORY] Loaded: 6 recent, 4 facts
+[MEMORY] Loaded: 6 recent, 4 facts
+[MEMORY] Loaded: 6 recent, 4 facts
+[MEMORY] Loaded: 6 recent, 4 facts
+[MEMORY] Loaded: 6 recent, 4 facts
+[MEMORY] Loaded: 6 recent, 4 facts
+[MEMORY] Loaded: 6 recent, 4 facts
+[MEMORY] Loaded: 6 recent, 4 facts
+[MEMORY] Loaded: 6 recent, 4 facts
+ * Serving Flask app 'server'
+ * Debug mode: off
+[MEMORY] Loaded: 6 recent, 4 facts
+[MEMORY] Loaded: 6 recent, 4 facts
+[MEMORY] Loaded: 6 recent, 4 facts
+[MEMORY] Loaded: 6 recent, 4 facts
+[TAVILY] 3 results for: "suche neueste TikTok Trends 2026"
+[MEMORY] Saved to JSONBin: 200
+[MEMORY] Loaded: 6 recent, 4 facts
+[MEMORY] Loaded: 6 recent, 4 facts
+ * Serving Flask app 'server'
+ * Debug mode: off
+[HEYGEN] Status: 404
+[HEYGEN] Status: 200
+[MEMORY] Loaded: 6 recent, 4 facts
+[MEMORY] Saved to JSONBin: 200
+[MEMORY] Auto-summary saved
+[MEMORY] Loaded: 0 recent, 4 facts
+[MEMORY] Saved to JSONBin: 200
+[MEMORY] Auto-save at 22:00
+[MEMORY] Loaded: 0 recent, 4 facts
+[MEMORY] Loaded: 0 recent, 4 facts
+[MEMORY] Loaded: 0 recent, 4 facts
+[MEMORY] Loaded: 0 recent, 4 facts
+[MEMORY] Loaded: 0 recent, 4 facts
+[MEMORY] Loaded: 0 recent, 4 facts
+ * Serving Flask app 'server'
+ * Debug mode: off
+[MEMORY] Loaded: 0 recent, 4 facts
+[TOOL] list_workspace_files({}) → {'pfad': '/', 'eintraege': [{'name': 'UEBERSICHT.md', 'type': 'datei', 'size': 616}, {'name': 'einkauf.txt', 'type': 'da
+[MEMORY] Saved to JSONBin: 200
+[MEMORY] Loaded: 1 recent, 4 facts
+[MEMORY] Loaded: 1 recent, 4 facts
+[MEMORY] Loaded: 1 recent, 4 facts
+[MEMORY] Loaded: 1 recent, 4 facts
+[TOOL] read_workspace_file({'relative_path': 'einkauf.txt'}) → {'pfad': 'einkauf.txt', 'inhalt': 'Einkaufsliste: Milch, Brot, Käse\n', 'groesse': 34}
+[MEMORY] Saved to JSONBin: 200
+[MEMORY] Loaded: 2 recent, 4 facts
+[MEMORY] Loaded: 2 recent, 4 facts
+[MEMORY] Loaded: 2 recent, 4 facts
+[MEMORY] Loaded: 2 recent, 4 facts
+[MEMORY] Loaded: 2 recent, 4 facts
+[MEMORY] Loaded: 2 recent, 4 facts
+[MEMORY] Loaded: 2 recent, 4 facts
+[TAVILY] 3 results for: hallo Sophie wie geht es dir so, so wir kommen näher an unse
+[MEMORY] Saved to JSONBin: 200
+[MEMORY] Loaded: 3 recent, 4 facts
+[MEMORY] Saved to JSONBin: 200
+[MEMORY] Loaded: 4 recent, 4 facts
+[MEMORY] Saved to JSONBin: 200
+[MEMORY] Loaded: 5 recent, 4 facts
+[MEMORY] Saved to JSONBin: 200
+[MEMORY] Loaded: 6 recent, 4 facts
+[MEMORY] Saved to JSONBin: 200
+[MEMORY] Auto-save at 14:00
+[MEMORY] Loaded: 6 recent, 4 facts
+[MEMORY] Saved to JSONBin: 200
+ * Serving Flask app 'server'
+ * Debug mode: off
+[MEMORY] Loaded: 6 recent, 4 facts
+[MEMORY] Loaded: 6 recent, 4 facts
+[MEMORY] Loaded: 6 recent, 4 facts
+[MEMORY] Loaded: 6 recent, 4 facts
+[MEMORY] Loaded: 6 recent, 4 facts
+[MEMORY] Loaded: 6 recent, 4 facts
+[MEMORY] Loaded: 6 recent, 4 facts
+[MEMORY] Loaded: 6 recent, 4 facts
+[MEMORY] Loaded: 6 recent, 4 facts
+[MEMORY] Loaded: 6 recent, 4 facts
+[MEMORY] Loaded: 6 recent, 4 facts
+[MEMORY] Loaded: 6 recent, 4 facts
+[MEMORY] Loaded: 6 recent, 4 facts
+[MEMORY] Saved to JSONBin: 200
+[MEMORY] Loaded: 6 recent, 4 facts
+[MEMORY] Saved to JSONBin: 200
+[MEMORY] Loaded: 6 recent, 4 facts
+[MEMORY] Saved to JSONBin: 200
+[MEMORY] Loaded: 6 recent, 4 facts
+[MEMORY] Saved to JSONBin: 200
+[MEMORY] Loaded: 6 recent, 4 facts
+[MEMORY] Saved to JSONBin: 200
+[MEMORY] Loaded: 6 recent, 4 facts
+[MEMORY] Loaded: 6 recent, 4 facts
+[MEMORY] Loaded: 6 recent, 4 facts
+[MEMORY] Loaded: 6 recent, 4 facts
+[MEMORY] Saved to JSONBin: 200
+[MEMORY] Loaded: 6 recent, 4 facts
+[MEMORY] Loaded: 6 recent, 4 facts
+[MEMORY] Loaded: 6 recent, 4 facts
+[MEMORY] Loaded: 6 recent, 4 facts
+[MEMORY] Loaded: 6 recent, 4 facts
+[MEMORY] Loaded: 6 recent, 4 facts
+[MEMORY] Loaded: 6 recent, 4 facts
+[MEMORY] Loaded: 6 recent, 4 facts
+[MEMORY] Loaded: 6 recent, 4 facts
+[MEMORY] Saved to JSONBin: 200
+[MEMORY] Auto-summary saved
+[MEMORY] Loaded: 0 recent, 4 facts
+[MEMORY] Saved to JSONBin: 200
+[MEMORY] Auto-save at 22:00
+[MEMORY] Loaded: 0 recent, 4 facts
+[MEMORY] Loaded: 0 recent, 4 facts
+[MEMORY] Loaded: 0 recent, 4 facts
+[MEMORY] Loaded: 0 recent, 4 facts
+[MEMORY] Loaded: 0 recent, 4 facts
+[MEMORY] Loaded: 0 recent, 4 facts
+[MEMORY] Loaded: 0 recent, 4 facts
+[TAVILY] 3 results for: ok versuchen wir mal was du alles kannst erstelle mir ein ti
+[MEMORY] Saved to JSONBin: 200
+[MEMORY] Loaded: 1 recent, 4 facts
+[MEMORY] Saved to JSONBin: 200
+[MEMORY] Auto-save at 10:00
+[MEMORY] Loaded: 2 recent, 4 facts
+[MEMORY] Saved to JSONBin: 200
+[MEMORY] Auto-save at 18:00
+[MEMORY] Loaded: 2 recent, 4 facts
+[MEMORY] Loaded: 2 recent, 4 facts
+[MEMORY] Loaded: 2 recent, 4 facts
+ * Serving Flask app 'server'
+ * Debug mode: off
+ * Serving Flask app 'server'
+ * Debug mode: off
+[MEMORY] Loaded: 6 recent, 4 facts
+[MEMORY] Loaded: 6 recent, 4 facts
+[MEMORY] Loaded: 6 recent, 4 facts
+[MEMORY] Loaded: 6 recent, 4 facts
+[MEMORY] Saved to JSONBin: 200
+ * Serving Flask app 'server'
+ * Debug mode: off
+[MEMORY] Loaded: 6 recent, 4 facts
+[MEMORY] Loaded: 6 recent, 4 facts
+[MEMORY] Loaded: 6 recent, 4 facts
+[MEMORY] Loaded: 6 recent, 4 facts
+[MEMORY] Saved to JSONBin: 200
+[UPLOAD] Selfie-Beschreibung in Memory gespeichert
+[MEMORY] Loaded: 6 recent, 5 facts
+[MEMORY] Saved to JSONBin: 200
+ * Serving Flask app 'server'
+ * Debug mode: off
+[MEMORY] Loaded: 6 recent, 5 facts
+[MEMORY] Loaded: 6 recent, 5 facts
+[MEMORY] Loaded: 6 recent, 5 facts
+ * Serving Flask app 'server'
+ * Debug mode: off
+[MEMORY] Loaded: 6 recent, 5 facts
+[MEMORY] Loaded: 6 recent, 5 facts
+[MEMORY] Loaded: 6 recent, 5 facts
+[TIKTOK] Skript gespeichert: 2026-06-16_über-claude-ai-tipps".md
+ * Serving Flask app 'server'
+ * Debug mode: off
+[MEMORY] Loaded: 6 recent, 5 facts
+[MEMORY] Loaded: 6 recent, 5 facts
+[MEMORY] Loaded: 6 recent, 5 facts
+[TIKTOK] Skript gespeichert: 2026-06-16_ber-n8n-automatisierung.md
+ * Serving Flask app 'server'
+ * Debug mode: off
+[MEMORY] Loaded: 6 recent, 5 facts
+[MEMORY] Loaded: 6 recent, 5 facts
+[MEMORY] Loaded: 6 recent, 5 facts
+[TIKTOK] Skript gespeichert: 2026-06-16_ber-heygen-avatar-tipps.md
+[MEMORY] Loaded: 6 recent, 5 facts
+[MEMORY] Saved to JSONBin: 200
+[MEMORY] Auto-summary saved
+[MEMORY] Loaded: 0 recent, 5 facts
+[MEMORY] Saved to JSONBin: 200
+[MEMORY] Auto-save at 22:00
+[STARTUP] TODO.md geladen
+[STARTUP] JARVIS_ROADMAP.md geladen
+[STARTUP] Workspace-Kontext geladen (3462 Zeichen)
+ * Serving Flask app 'server'
+ * Debug mode: off
+[MEMORY] Loaded: 0 recent, 5 facts
+[MEMORY] Loaded: 0 recent, 5 facts
+[MEMORY] Loaded: 0 recent, 5 facts
+[MEMORY] Loaded: 0 recent, 5 facts
+[TOOL] read_workspace_file({'relative_path': 'TODO.md'}) → {'error': "Datei 'TODO.md' nicht gefunden"}
+[TOOL] list_workspace_files({}) → {'pfad': '/', 'eintraege': [{'name': 'UEBERSICHT.md', 'type': 'datei', 'size': 616}, {'name': 'einkauf.txt', 'type': 'da
+[TOOL] read_workspace_file({'relative_path': 'UEBERSICHT.md'}) → {'pfad': 'UEBERSICHT.md', 'inhalt': '# Workspace Übersicht\n\n## Ordnerstruktur\n\n### sophie-ai/\nAlles rund um den per
+[MEMORY] Saved to JSONBin: 200
+[MEMORY] Loaded: 1 recent, 5 facts
+[TAVILY] 3 results for: Sophie, was ist unser nächster Schritt laut Roadmap
+[TOOL] read_workspace_file({'relative_path': 'roadmap.md'}) → {'error': "Datei 'roadmap.md' nicht gefunden"}
+[MEMORY] Saved to JSONBin: 200
+[STARTUP] TODO.md geladen
+[STARTUP] JARVIS_ROADMAP.md geladen
+[STARTUP] Workspace-Kontext geladen (3918 Zeichen)
+ * Serving Flask app 'server'
+ * Debug mode: off
+[MEMORY] Loaded: 2 recent, 5 facts
+[MEMORY] Loaded: 2 recent, 5 facts
+[MEMORY] Loaded: 2 recent, 5 facts
+[MEMORY] Loaded: 2 recent, 5 facts
+[TOOL] read_workspace_file({'relative_path': 'TODO.md'}) → {'error': "Datei 'TODO.md' nicht gefunden"}
+[TOOL] list_workspace_files({}) → {'pfad': '/', 'eintraege': [{'name': 'UEBERSICHT.md', 'type': 'datei', 'size': 616}, {'name': 'einkauf.txt', 'type': 'da
+[TOOL] list_workspace_files({'subdir': 'notizen'}) → {'pfad': 'notizen', 'eintraege': [{'name': 'JARVIS_ROADMAP.md', 'type': 'datei', 'size': 2292}, {'name': 'TODO.md', 'typ
+[TOOL] read_workspace_file({'relative_path': 'notizen/TODO.md'}) → {'pfad': 'notizen/TODO.md', 'inhalt': '# Sophie TODO (Stand 16.06.2026)\n## 🔴 Aktiv\n- [ ] n8n Workflow für HeyGen bauen
+[MEMORY] Saved to JSONBin: 200
+[STARTUP] TODO.md geladen
+[STARTUP] JARVIS_ROADMAP.md geladen
+[STARTUP] Workspace-Kontext geladen (3918 Zeichen)
+ * Serving Flask app 'server'
+ * Debug mode: off
+[MEMORY] Loaded: 3 recent, 5 facts
+[MEMORY] Loaded: 3 recent, 5 facts
+[MEMORY] Loaded: 3 recent, 5 facts
+[MEMORY] Loaded: 3 recent, 5 facts
+[MEMORY] Saved to JSONBin: 200
+[LOCATION] Gespeichert: 46.7706494467116, 7.354109230682689 ()
+[MEMORY] Loaded: 3 recent, 5 facts
+[TOOL] read_workspace_file({'relative_path': 'wetter.md'}) → {'error': "Datei 'wetter.md' nicht gefunden"}
+[MEMORY] Saved to JSONBin: 200
+[STARTUP] TODO.md geladen
+[STARTUP] JARVIS_ROADMAP.md geladen
+[STARTUP] Workspace-Kontext geladen (3918 Zeichen)
+ * Serving Flask app 'server'
+ * Debug mode: off
+[MEMORY] Loaded: 4 recent, 5 facts
+[MEMORY] Loaded: 4 recent, 5 facts
+[MEMORY] Loaded: 4 recent, 5 facts
+[MEMORY] Saved to JSONBin: 200
+[LOCATION] Gespeichert: 46.77055270503555, 7.354073647085929 (Riffenmatt)
+[MEMORY] Loaded: 4 recent, 5 facts
+[MEMORY] Loaded: 4 recent, 5 facts
+[TOOL] read_workspace_file({'relative_path': 'TODO.md'}) → {'error': "Datei 'TODO.md' nicht gefunden"}
+[TOOL] read_workspace_file({'relative_path': 'JARVIS_ROADMAP.md'}) → {'error': "Datei 'JARVIS_ROADMAP.md' nicht gefunden"}
+[TOOL] list_workspace_files({}) → {'pfad': '/', 'eintraege': [{'name': 'UEBERSICHT.md', 'type': 'datei', 'size': 616}, {'name': 'einkauf.txt', 'type': 'da
+[TOOL] read_workspace_file({'relative_path': 'UEBERSICHT.md'}) → {'pfad': 'UEBERSICHT.md', 'inhalt': '# Workspace Übersicht\n\n## Ordnerstruktur\n\n### sophie-ai/\nAlles rund um den per
+[TOOL] list_workspace_files({'subdir': 'notizen'}) → {'pfad': 'notizen', 'eintraege': [{'name': 'JARVIS_ROADMAP.md', 'type': 'datei', 'size': 2292}, {'name': 'TODO.md', 'typ
+[TOOL] list_workspace_files({'subdir': 'tiktok-content'}) → {'pfad': 'tiktok-content', 'eintraege': [{'name': 'done', 'type': 'ordner', 'size': None}, {'name': 'drafts', 'type': 'o
+[TOOL] read_workspace_file({'relative_path': 'notizen/TODO.md'}) → {'pfad': 'notizen/TODO.md', 'inhalt': '# Sophie TODO (Stand 16.06.2026)\n## 🔴 Aktiv\n- [ ] n8n Workflow für HeyGen bauen
+[TOOL] read_workspace_file({'relative_path': 'notizen/JARVIS_ROADMAP.md'}) → {'pfad': 'notizen/JARVIS_ROADMAP.md', 'inhalt': '# Sophie -> Jarvis Roadmap (aktualisiert 16.06.2026)\n## Vision\nSophie
+[TOOL] list_workspace_files({'subdir': 'tiktok-content/drafts'}) → {'pfad': 'tiktok-content/drafts', 'eintraege': [{'name': '2026-06-15_prokrastination-5min-regel.md', 'type': 'datei', 's
+[MEMORY] Saved to JSONBin: 200
+[STARTUP] TODO.md geladen
+[STARTUP] JARVIS_ROADMAP.md geladen
+[STARTUP] Workspace-Kontext geladen (3918 Zeichen)
+ * Serving Flask app 'server'
+ * Debug mode: off
+[STARTUP] TODO.md geladen
+[STARTUP] JARVIS_ROADMAP.md geladen
+[STARTUP] Workspace-Kontext geladen (3918 Zeichen)
+ * Serving Flask app 'server'
+ * Debug mode: off
+[STARTUP] TODO.md geladen
+[STARTUP] JARVIS_ROADMAP.md geladen
+[STARTUP] Workspace-Kontext geladen (3918 Zeichen)
+ * Serving Flask app 'server'
+ * Debug mode: off
+[STARTUP] TODO.md geladen
+[STARTUP] JARVIS_ROADMAP.md geladen
+[STARTUP] Workspace-Kontext geladen (3918 Zeichen)
+ * Serving Flask app 'server'
+ * Debug mode: off
+[STARTUP] TODO.md geladen
+[STARTUP] JARVIS_ROADMAP.md geladen
+[STARTUP] Workspace-Kontext geladen (3918 Zeichen)
+ * Serving Flask app 'server'
+ * Debug mode: off
+[STARTUP] TODO.md geladen
+[STARTUP] JARVIS_ROADMAP.md geladen
+[STARTUP] Workspace-Kontext geladen (3918 Zeichen)
+ * Serving Flask app 'server'
+ * Debug mode: off
+[MEMORY] Loaded: 5 recent, 5 facts
+[MEMORY] Loaded: 5 recent, 5 facts
+[MEMORY] Loaded: 5 recent, 5 facts
+[MEMORY] Loaded: 5 recent, 5 facts
+[MEMORY] Saved to JSONBin: 200
+[LOCATION] Gespeichert: 46.77057649567534, 7.3541512333519705 (Riffenmatt)
+[STARTUP] TODO.md geladen
+[STARTUP] JARVIS_ROADMAP.md geladen
+[STARTUP] Workspace-Kontext geladen (4571 Zeichen)
+ * Serving Flask app 'server'
+ * Debug mode: off

@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react"
 import axios from "axios"
 
-const API = "https://sophie-ai-jfna.onrender.com"
+const API = "https://sophie.maravi-o.com"
 
 function App() {
   const [messages, setMessages] = useState([])
@@ -19,6 +19,9 @@ function App() {
   const [calMonth, setCalMonth] = useState(new Date())
   const [showSettings, setShowSettings] = useState(false)
   const [elUsage, setElUsage] = useState(null)
+  const [uploadFile, setUploadFile] = useState(null)
+  const [uploadPreview, setUploadPreview] = useState(null)
+  const [uploading, setUploading] = useState(false)
   const canvasRef = useRef(null)
   const audioRef = useRef(null)
   const recognitionRef = useRef(null)
@@ -206,17 +209,69 @@ function App() {
     recognitionRef.current = r; r.start()
   }
 
+  const handleFileUpload = async (e) => {
+    const file = e.target.files[0]
+    if (!file) return
+    setUploadFile(file)
+    setUploadPreview(URL.createObjectURL(file))
+  }
+
+  const sendUpload = async () => {
+    if (!uploadFile) return
+    setUploading(true)
+    const formData = new FormData()
+    formData.append('file', uploadFile)
+    const isSelfie = window.confirm('Bist du das auf dem Bild? Soll ich mir dein Aussehen merken?')
+    formData.append('message', 'Beschreibe mir was du auf diesem Bild siehst, auf Deutsch.')
+    formData.append('is_selfie', isSelfie ? 'true' : 'false')
+    try {
+      const res = await fetch(`${API}/upload`, { method: 'POST', body: formData })
+      const data = await res.json()
+      setMessages(prev => [...prev,
+        { role: 'user', text: '📎 [Datei hochgeladen]' },
+        { role: 'assistant', text: data.response }
+      ])
+      setUploadFile(null)
+      setUploadPreview(null)
+    } catch(err) {
+      console.error('Upload error:', err)
+    }
+    setUploading(false)
+  }
+
   const handleStart = async () => {
     if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(
-        pos => {
-          axios.post(`${API}/location`, {
-            lat: pos.coords.latitude,
-            lon: pos.coords.longitude
-          }).catch(()=>{})
-        },
-        () => {}
-      )
+      navigator.geolocation.getCurrentPosition(async (pos) => {
+        try {
+          const { latitude: lat, longitude: lon } = pos.coords;
+
+          // Reverse Geocoding via OpenStreetMap (kostenlos, kein API-Key nötig)
+          let city = '';
+          try {
+            const geoRes = await fetch(
+              `https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${lon}&format=json`,
+              { headers: { 'Accept-Language': 'de' } }
+            );
+            const geoData = await geoRes.json();
+            city = geoData.address?.city ||
+                   geoData.address?.town ||
+                   geoData.address?.village ||
+                   geoData.address?.municipality ||
+                   '';
+          } catch(e) {
+            console.log('Geocoding fehlgeschlagen, nur Koordinaten');
+          }
+
+          // Location mit Stadtname an Sophie schicken
+          await fetch(`${API}/location`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ lat, lon, city })
+          });
+
+          console.log(`[GPS] ${city || 'unbekannt'} (${lat.toFixed(2)}, ${lon.toFixed(2)})`);
+        } catch(e) {}
+      })
     }
     setStarted(true)
     try {
@@ -431,6 +486,19 @@ function App() {
             try { const r = await axios.get(`${API}/elevenlabs/usage`); setElUsage(r.data) } catch(e) {}
           }} style={btnStyle("blue")}>SETTINGS</button>
           <button onClick={startListening} style={{width:"48px",height:"48px",borderRadius:"50%",border:"2px solid rgba(200,230,255,0.55)",background:listening?"rgba(244,114,182,0.2)":"rgba(150,200,255,0.1)",color:"#fff",fontSize:"20px",cursor:"pointer",display:"flex",alignItems:"center",justifyContent:"center"}}>🎙</button>
+          <label style={{cursor:'pointer', marginLeft:'8px'}} title="Foto/Video hochladen">
+            <input type="file" accept="image/*,video/*" style={{display:'none'}} onChange={handleFileUpload} />
+            📎
+          </label>
+          {uploadPreview && (
+            <div style={{position:'absolute', bottom:'80px', left:'50%', transform:'translateX(-50%)', background:'rgba(0,0,0,0.8)', padding:'10px', borderRadius:'12px', textAlign:'center'}}>
+              <img src={uploadPreview} style={{maxWidth:'200px', maxHeight:'150px', borderRadius:'8px'}} alt="preview" />
+              <br/>
+              <button onClick={sendUpload} disabled={uploading} style={{marginTop:'8px', padding:'6px 16px', borderRadius:'8px', background:'#7c3aed', color:'white', border:'none', cursor:'pointer'}}>
+                {uploading ? 'Analyse...' : 'An Sophie senden'}
+              </button>
+            </div>
+          )}
         </div>
 
       </div>
